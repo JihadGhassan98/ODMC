@@ -1,0 +1,133 @@
+.db-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.db-body__saperator {
+  width: 50%;
+  margin: 2% auto;
+  background-color: #658A2E;
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+}
+.db-body__section-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.db-body__section-row--sidebar {
+  width: 20%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+  gap: 10px;
+  background-color: #662D91;
+  position: sticky;
+  overflow: auto;
+}
+.db-body__section-row--sidebar::-webkit-scrollbar {
+  display: none;
+}
+.db-body__section-row .news-card {
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  box-shadow: 0 0 2px 0 #000;
+  background-color: #fff;
+}
+.db-body__section-row .news-title {
+  font-weight: bold;
+}
+.db-body__section-row .news-date {
+  color: rgba(0, 0, 0, 0.411);
+  font-weight: bold;
+}
+.db-body__section-row .news-author {
+  color: #662D91;
+  font-weight: bold;
+}
+.db-body__section-row .news-link {
+  background-color: #658A2E;
+  color: #fff;
+  padding: 1.5%;
+  margin: 2% 0;
+  border-radius: 5px;
+  width: -moz-max-content;
+  width: max-content;
+}
+.db-body__section-row .show-all-news {
+  background-color: #658A2E;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  width: -moz-max-content;
+  width: max-content;
+  margin: auto;
+  padding: 1.5%;
+}
+
+.db-user-links {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 2%;
+}
+.db-user-links__link {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 2px solid #662D91;
+}
+.db-user-links__link--image {
+  width: 100%;
+  height: 100%;
+}
+.db-user-links__link--link-context {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.671);
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+.db-user-links__link .context-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+.db-user-links__link:hover .db-user-links__link--link-context {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.4s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .db-body__saperator {
+    width: 90%;
+    font-size: 20px;
+  }
+  .db-user-links__link {
+    width: 48%;
+    height: auto;
+    height: 200px;
+  }
+  .db-user-links__link--link-context {
+    visibility: visible;
+    opacity: 1;
+    text-align: center;
+  }
+}

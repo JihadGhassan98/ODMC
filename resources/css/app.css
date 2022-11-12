@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.auth-logo{
+
+    width: 70%;
+    margin: auto;
+}
+.main-btn{
+
+    background-color: #662D91;
+    color: #fff;
+    cursor: pointer;
+}
+.nav-logo{
+
+    width: 120px;
+}
+.active-nav-link{
+border-bottom: 5px solid;
+    border-bottom-color:#662D91 ;
+    font-weight: bold;
+}
+.bg-color-odmc{
+    background-color: #662D91;
+    color: #fff;
+}
+.h2-text{
+font-size: 20px;
+
+}
+.db-header{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1%;
+}
+.db-header-buttons{
+ 
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.db-header-button{
+padding: 10px;
+    background-color: #fff;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    transition: all .4s ease-in-out;
+
+}
+.db-header-button:hover{
+background-color: #658A2E;
+color: #fff;
+transition: all .2s ease-in-out;
+
+}
+
+@media screen and (max-width:768px) {
+
+    .db-header{
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+    }
+    .db-header-buttons{
+  width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .db-header-button{
+
+        width: 70%;
+        margin: auto;
+    }
+}
