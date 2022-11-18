@@ -1,8 +1,10 @@
 function show_nav(){
-
-    scroll_lock();
-}
-function hide_nav(){
-
-    scroll_unlock();
+    if(document.body.style.overflow == "hidden"){
+        scroll_unlock();
+    }
+    else{
+        scroll_lock();
+       
+    }
+    document.querySelector('#mobileNav').classList.toggle('show-nav');
 }

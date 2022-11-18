@@ -6,28 +6,34 @@
 
         <x-jet-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register') }}" dir="{{App::isLocale('ar')?'rtl':'ltr'}}">
             @csrf
 
             <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
+                <x-jet-label for="name" value="{{App::isLocale('ar')? 'الاسم':'Name'}}" />
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
+                <x-jet-label for="email" value="{{ App::isLocale('ar')? 'البريد الالكتروني':'Email' }}" />
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+            </div>
+            <div class="mt-4">
+                <x-jet-label for="phone" value="{{App::isLocale('ar')?'رقم الهاتف':'Phone Number' }}" />
+                <x-jet-input id="phone" class="block mt-1 w-full" type="text" name="phone" required />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
+                <x-jet-label for="password" value="{{App::isLocale('ar')?'كلمة المرور':'Password' }}" />
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+                <x-jet-label for="password_confirmation" value="{{App::isLocale('ar')?'تأكيد كلمة المرور':'Confirm Password' }}" />
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
+
+         
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
@@ -46,13 +52,13 @@
                 </div>
             @endif
 
-            <div class="flex items-center justify-end mt-4">
+            <div class="flex items-center justify-between mt-4" dir="{{App::isLocale('ar')?'rtl':'ltr'}}">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+                    {{ App::isLocale('ar')?'هل لديك حساب؟':'Already Registered?' }}
                 </a>
 
                 <x-jet-button class="ml-4">
-                    {{ __('Register') }}
+                    {{ App::isLocale('ar')?'التسجيل':'Register' }}
                 </x-jet-button>
             </div>
         </form>

@@ -22731,11 +22731,11 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
 /******/ 			"css/body": 0,
+/******/ 			"css/app": 0,
 /******/ 			"css/footer": 0,
 /******/ 			"css/navbar": 0,
 /******/ 			"css/homePage": 0,
 /******/ 			"css/welcomeUser": 0,
-/******/ 			"css/app": 0,
 /******/ 			"css/userAppointments": 0
 /******/ 		};
 /******/ 		
@@ -22786,14 +22786,14 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/footer","css/navbar","css/homePage","css/welcomeUser","css/app","css/userAppointments"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/footer","css/navbar","css/homePage","css/welcomeUser","css/app","css/userAppointments"], () => (__webpack_require__("./resources/Sass/welcomeUser.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/footer","css/navbar","css/homePage","css/welcomeUser","css/app","css/userAppointments"], () => (__webpack_require__("./resources/Sass/homePage.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/footer","css/navbar","css/homePage","css/welcomeUser","css/app","css/userAppointments"], () => (__webpack_require__("./resources/Sass/body.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/footer","css/navbar","css/homePage","css/welcomeUser","css/app","css/userAppointments"], () => (__webpack_require__("./resources/Sass/navbar.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/footer","css/navbar","css/homePage","css/welcomeUser","css/app","css/userAppointments"], () => (__webpack_require__("./resources/Sass/footer.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/footer","css/navbar","css/homePage","css/welcomeUser","css/app","css/userAppointments"], () => (__webpack_require__("./resources/Sass/userAppointments.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/body","css/footer","css/navbar","css/homePage","css/welcomeUser","css/app","css/userAppointments"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments"], () => (__webpack_require__("./resources/Sass/welcomeUser.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments"], () => (__webpack_require__("./resources/Sass/homePage.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments"], () => (__webpack_require__("./resources/Sass/body.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments"], () => (__webpack_require__("./resources/Sass/navbar.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments"], () => (__webpack_require__("./resources/Sass/footer.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments"], () => (__webpack_require__("./resources/Sass/userAppointments.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments"], () => (__webpack_require__("./resources/css/app.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
