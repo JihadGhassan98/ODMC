@@ -1,15 +1,15 @@
 <x-jet-form-section submit="updateProfileInformation">
     <x-slot name="title">
-        {{ __('Profile Information') }}
+        {{ App::isLocale('ar')? 'معلومات الحساب':'Profile Information' }}
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Update your account\'s profile information and email address.') }}
+        {{ App::isLocale('ar')? 'تحديث بيانات حسابك والصورة الشخصية.':'Update your account\'s profile information and email address.' }}
     </x-slot>
 
     <x-slot name="form">
         <!-- Profile Photo -->
-        @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+         {{-- @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
             <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 sm:col-span-4">
                 <!-- Profile Photo File Input -->
                 <input type="file" class="hidden"
@@ -50,33 +50,35 @@
 
                 <x-jet-input-error for="photo" class="mt-2" />
             </div>
-        @endif
+        @endif --}}
+
+   
 
         <!-- Name -->
         <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="name" value="{{ __('Name') }}" />
+            <x-jet-label for="name" value="{{ App::isLocale('ar')? 'الاسم':'Name' }}" />
             <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" />
             <x-jet-input-error for="name" class="mt-2" />
         </div>
 
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="email" value="{{ __('Email') }}" />
+            <x-jet-label for="email" value="{{ App::isLocale('ar')? 'البريد الالكتروني':'Email' }}" />
             <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
 
             @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::emailVerification()) && ! $this->user->hasVerifiedEmail())
                 <p class="text-sm mt-2">
-                    {{ __('Your email address is unverified.') }}
+                    {{ App::isLocale('ar')? 'بريدك الالكتروني غير مؤكد':'Your email address is unverified.' }}
 
                     <button type="button" class="underline text-sm text-gray-600 hover:text-gray-900" wire:click.prevent="sendEmailVerification">
-                        {{ __('Click here to re-send the verification email.') }}
+                        {{ App::isLocale('ar')?'اضغط هنا لاعادة ارسال التأكيد':'Click here to re-send the verification email.' }}
                     </button>
                 </p>
 
                 @if ($this->verificationLinkSent)
                     <p v-show="verificationLinkSent" class="mt-2 font-medium text-sm text-green-600">
-                        {{ __('A new verification link has been sent to your email address.') }}
+                        {{App::isLocale('ar')? 'تم ارسال رسالة التأكيد الى بريدك الالكتروني.':'A new verification link has been sent to your email address.' }}
                     </p>
                 @endif
             @endif
@@ -85,11 +87,11 @@
 
     <x-slot name="actions">
         <x-jet-action-message class="mr-3" on="saved">
-            {{ __('Saved.') }}
+        <b>{{ App::isLocale('ar')? 'تم الحفظ.':'Saved.' }}</b>
         </x-jet-action-message>
 
         <x-jet-button wire:loading.attr="disabled" wire:target="photo">
-            {{ __('Save') }}
+        {{ App::isLocale('ar')? 'حفظ':'Save' }}
         </x-jet-button>
     </x-slot>
 </x-jet-form-section>

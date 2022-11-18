@@ -1,11 +1,11 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav  x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl px-1 sm:px-1 ">
         <div class="flex justify-between p-1">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ url('/') }}">
                     <img src="/systemImages/ODMC.png" alt="" class="nav-logo">
                     </a>
                 </div>
@@ -99,18 +99,18 @@
                             @endif
                         </x-slot>
 
-                        <x-slot name="content">
+                        <x-slot name="content" >
                             <!-- Account Management -->
-                            <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Manage Account') }}
+                            <div class="block px-4 py-2 text-xs text-gray-400" dir="{{App::isLocale('ar')?'rtl':'ltr'}}">
+                                {{ App::isLocale('ar')? 'إدارة الحساب':'Manage Account' }}
                             </div>
 
-                            <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Profile') }}
+                            <x-jet-dropdown-link href="{{ route('profile.show') }}" dir="{{App::isLocale('ar')?'rtl':'ltr'}}">
+                                {{App::isLocale('ar')?'الملف الشخصي':'Profile' }}
                             </x-jet-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                                <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
+                                <x-jet-dropdown-link href="{{ route('api-tokens.index') }}" >
                                     {{ __('API Tokens') }}
                                 </x-jet-dropdown-link>
                             @endif
@@ -118,12 +118,12 @@
                             <div class="border-t border-gray-100"></div>
 
                             <!-- Authentication -->
-                            <form method="POST" action="{{ route('logout') }}" x-data>
+                            <form method="POST" action="{{ route('logout') }}" x-data dir="{{App::isLocale('ar')?'rtl':'ltr'}}">
                                 @csrf
 
                                 <x-jet-dropdown-link href="{{ route('logout') }}"
                                          @click.prevent="$root.submit();">
-                                    {{ __('Log Out') }}
+                                    {{  App::isLocale('ar')?'تسجيل الخروج':'Log Out' }}
                                 </x-jet-dropdown-link>
                             </form>
                         </x-slot>
@@ -185,7 +185,7 @@
             <div class="mt-1 space-y-1">
                 <!-- Account Management -->
                 <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                    {{ __('Profile') }}
+                {{App::isLocale('ar')?'الملف الشخصي':'Profile' }}
                 </x-jet-responsive-nav-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -200,7 +200,7 @@
 
                     <x-jet-responsive-nav-link href="{{ route('logout') }}"
                                    @click.prevent="$root.submit();">
-                        {{ __('Log Out') }}
+                                   {{  App::isLocale('ar')?'تسجيل الخروج':'Log Out' }}
                     </x-jet-responsive-nav-link>
                 </form>
 

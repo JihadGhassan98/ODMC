@@ -22,6 +22,7 @@
 .navbar__logo-lang--lang {
   font-weight: 500;
   font-size: 20px;
+  color: #662D91;
 }
 .navbar__links {
   display: flex;
@@ -31,16 +32,38 @@
 }
 .navbar__links--link {
   font-size: 20px;
+  color: #662D91;
 }
 .navbar__links .auth-link {
   background-color: #662D91;
   color: #fff;
-  padding: 0 5px;
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+.navbar__links .auth-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 .navbar__links .auth-link-2 {
   background-color: #658A2E;
   color: #fff;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.auth-logout {
+  background-color: #658A2E;
+  color: #fff;
   padding: 0 5px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .mobile-nav-cta {
@@ -51,7 +74,7 @@
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .desktop-links {
     display: none;
   }

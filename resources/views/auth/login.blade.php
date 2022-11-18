@@ -43,7 +43,7 @@
                     </a>
 
                 <x-jet-button class="ml-4">
-                    {{ __('Log in') }}
+                    {{ App::isLocale('ar')? 'تسجيل الدخول':'Log In' }}
                 </x-jet-button>
             </div>
         </form>
