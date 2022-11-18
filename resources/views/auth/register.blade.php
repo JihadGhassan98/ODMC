@@ -11,12 +11,14 @@
 
             <div>
                 <x-jet-label for="name" value="{{App::isLocale('ar')? 'الاسم':'Name'}}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required
+                    autofocus autocomplete="name" />
             </div>
 
             <div class="mt-4">
                 <x-jet-label for="email" value="{{ App::isLocale('ar')? 'البريد الالكتروني':'Email' }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
+                    required />
             </div>
             <div class="mt-4">
                 <x-jet-label for="phone" value="{{App::isLocale('ar')?'رقم الهاتف':'Phone Number' }}" />
@@ -25,31 +27,50 @@
 
             <div class="mt-4">
                 <x-jet-label for="password" value="{{App::isLocale('ar')?'كلمة المرور':'Password' }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required
+                    autocomplete="new-password" />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{App::isLocale('ar')?'تأكيد كلمة المرور':'Confirm Password' }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+                <x-jet-label for="password_confirmation"
+                    value="{{App::isLocale('ar')?'تأكيد كلمة المرور':'Confirm Password' }}" />
+                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password"
+                    name="password_confirmation" required autocomplete="new-password" />
             </div>
 
-         
+            <div class="mt-4">
+                <x-jet-label for="gender" value="{{App::isLocale('ar')?'الجنس':'Gender' }}" />
+                <select name="gender" required id="">
+                    <option value="" selected>--{{App::isLocale('ar')? 'اختر':'Choose'}}--</option>
+                    <option value="male">{{App::isLocale('ar')? 'ذكر':'Male'}}</option>
+                    <option value="female">{{App::isLocale('ar')? 'انثى':'Female'}}</option>
+                </select>
+            </div>
+            <div class="mt-4">
+            <x-jet-label for="birth" value="{{App::isLocale('ar')?'تاريخ الميلاد':'Birthdate' }}" />
+            <input required name="birth" type="date">
+            </div>
+
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                <div class="mt-4">
-                    <x-jet-label for="terms">
-                        <div class="flex items-center">
-                            <x-jet-checkbox name="terms" id="terms"/>
+            <div class="mt-4">
+                <x-jet-label for="terms">
+                    <div class="flex items-center">
+                        <x-jet-checkbox name="terms" id="terms" />
 
-                            <div class="ml-2">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
-                                ]) !!}
-                            </div>
+                        <div class="ml-2">
+                            {!! __('I agree to the :terms_of_service and :privacy_policy', [
+                            'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'"
+                                class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of
+                                Service').'</a>',
+                            'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'"
+                                class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy
+                                Policy').'</a>',
+                            ]) !!}
                         </div>
-                    </x-jet-label>
-                </div>
+                    </div>
+                </x-jet-label>
+            </div>
             @endif
 
             <div class="flex items-center justify-between mt-4" dir="{{App::isLocale('ar')?'rtl':'ltr'}}">

@@ -16,6 +16,7 @@
         <!-- Scripts -->
 
   <link rel="stylesheet" href="/css/userAppointments.css">
+  <link rel="stylesheet" href="/css/uploadPhoto.css">
   <link rel="stylesheet" href="/css/welcomeUser.css">
   <link rel="stylesheet" href="/css/app.css">
   <script src="/js/app.js"></script>

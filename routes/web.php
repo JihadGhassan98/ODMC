@@ -35,4 +35,11 @@ Route::middleware([
 return view('myAppointments');
 
     })->name('appointments');
+    Route::post('/uploadPhoto/{user_id}','App\Http\Controllers\ImageUploader@saveUserImage');
+    Route::get('uploadPhoto',function (){
+
+
+        return view('uploadImage');
+    });
+   
 });
