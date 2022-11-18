@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="/css/uploadPhoto.css">
   <link rel="stylesheet" href="/css/welcomeUser.css">
   <link rel="stylesheet" href="/css/app.css">
-  <script src="/js/app.js"></script>
+  <script defer src="/js/app.js"></script>
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
@@ -50,7 +50,7 @@
         </div>
 
         @stack('modals')
-
+        <script src="{{asset('/js/imageUploader.js')}}"></script>
         @livewireScripts
     </body>
 </html>

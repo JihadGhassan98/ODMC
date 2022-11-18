@@ -3,6 +3,6 @@ function showPreview( event ) {
         var src = URL.createObjectURL( event.target.files[ 0 ] );
         var preview = document.getElementById( `${event.target.id}_preview` );
         preview.src = src;
-        //   preview.style.display = "block";
+        //  preview.style.display = "block";
     }
 }
