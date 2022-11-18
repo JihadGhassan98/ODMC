@@ -48,3 +48,9 @@
   border-radius: 0px;
   transition: all 0.4s ease-in-out;
 }
+
+@media screen and (max-width: 768px) {
+  .home-page__hero .slug-text {
+    font-size: 30px;
+  }
+}

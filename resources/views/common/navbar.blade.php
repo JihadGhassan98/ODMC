@@ -22,12 +22,11 @@
 <button class="mobile-nav-cta" onclick="show_nav()"><i class="fa fa-bars" aria-hidden="true"></i></button>
 
 
-
-</nav>
-
 <div class="mobile-links">
-<button onclick="hide_nav()" class="mobile-links__close-cta"></button>
+<button onclick="hide_nav()" class="mobile-links__close-cta"><i class="fa-solid fa-xmark"></i></button>
 
 
 
 </d>
+</nav>
+
