@@ -12,9 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/*Localization route*/
+Route::get('lang/{locale}', 'App\Http\Controllers\LocalizationController@lang');
+/*End Locaalization route */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('website.homePage');
 });
 
 

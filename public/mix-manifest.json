@@ -1,6 +1,10 @@
 {
     "/js/app.js": "/js/app.js",
+    "/css/body.css": "/css/body.css",
+    "/css/footer.css": "/css/footer.css",
+    "/css/navbar.css": "/css/navbar.css",
+    "/css/homePage.css": "/css/homePage.css",
+    "/css/welcomeUser.css": "/css/welcomeUser.css",
     "/css/app.css": "/css/app.css",
-    "/css/userAppointments.css": "/css/userAppointments.css",
-    "/css/welcomeUser.css": "/css/welcomeUser.css"
+    "/css/userAppointments.css": "/css/userAppointments.css"
 }

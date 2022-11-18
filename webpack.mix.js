@@ -17,6 +17,10 @@ mix.js('resources/js/app.js', 'public/js')
     ]);
 
     mix.sass('resources/Sass/welcomeUser.scss','public/css')
+    .sass('resources/Sass/homePage.scss','public/css')
+    .sass('resources/Sass/body.scss','public/css')
+    .sass('resources/Sass/navbar.scss','public/css')
+    .sass('resources/Sass/footer.scss','public/css')
     .sass('resources/Sass/userAppointments.scss','public/css');
 
 
