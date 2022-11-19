@@ -32,6 +32,7 @@ class User extends Authenticatable
         'type',
         'gender',
         'birthdate',
+        'medical_record_path',
     ];
 
     /**

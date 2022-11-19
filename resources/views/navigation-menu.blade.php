@@ -24,6 +24,15 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('becomeVolunteer')">
                     {{ App::isLocale('ar')? 'تطوع معنا':'Volunteer With Us' }}
                     </x-jet-nav-link>
+                    @if(App::isLocale('en'))
+                    <x-jet-nav-link href="{{url('lang/ar')}}">
+                    العربية
+                    </x-jet-nav-link>
+                    @else
+                    <x-jet-nav-link href="{{url('lang/en')}}">
+                    English
+                    </x-jet-nav-link>
+                @endif
                 </div>
             </div>
 
@@ -165,7 +174,19 @@
             {{ App::isLocale('ar')? 'تطوع معنا':'Volunteer With Us' }}
             </x-jet-responsive-nav-link>
         </div>
-        
+        @if(App::isLocale('ar'))
+        <div class=" pb-1 space-y-1">
+            <x-jet-responsive-nav-link href="{{url('lang/en')}}" :active="request()->routeIs('becomeVolunteer')">
+            English
+            </x-jet-responsive-nav-link>
+        </div>
+        @else
+        <div class=" pb-1 space-y-1">
+            <x-jet-responsive-nav-link href="{{url('lang/ar')}}" :active="request()->routeIs('becomeVolunteer')">
+            العربية
+            </x-jet-responsive-nav-link>
+        </div>
+        @endif
       
                   
                     

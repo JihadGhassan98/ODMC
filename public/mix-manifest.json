@@ -7,5 +7,6 @@
     "/css/homePage.css": "/css/homePage.css",
     "/css/welcomeUser.css": "/css/welcomeUser.css",
     "/css/userAppointments.css": "/css/userAppointments.css",
+    "/css/medicalRecords.css": "/css/medicalRecords.css",
     "/css/uploadPhoto.css": "/css/uploadPhoto.css"
 }

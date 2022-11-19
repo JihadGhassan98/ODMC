@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="/css/userAppointments.css">
   <link rel="stylesheet" href="/css/uploadPhoto.css">
   <link rel="stylesheet" href="/css/welcomeUser.css">
+  <link rel="stylesheet" href="/css/medicalRecords.css">
   <link rel="stylesheet" href="/css/app.css">
   <script defer src="/js/app.js"></script>
     </head>
@@ -35,7 +36,7 @@
                     </div>
                     <div class="db-header-buttons">
     <a href="{{url('/')}}" class="db-header-button">{{App::isLocale('ar')? 'الرئيسية':'Home'}}</a>
-    <a href="#" class="db-header-button">{{App::isLocale('ar')? 'بياناتي الطبية':'My Medical Info'}}</a>
+    <a href="{{url('/myMedicalRecords')}}" class="db-header-button">{{App::isLocale('ar')? 'بياناتي الطبية':'My Medical Info'}}</a>
     <a href="#" class="db-header-button">{{App::isLocale('ar')? 'العيادات ':'Clinics'}}</a>
     <a href="{{url('/user/profile')}}" class="db-header-button">{{App::isLocale('ar')? 'الملف الشخصي ':'Profile'}}</a>
     <a href="#" class="db-header-button">{{App::isLocale('ar')? 'الابلاغ عن مشكلة ':'Report A Problem '}}</a>

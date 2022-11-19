@@ -31,15 +31,19 @@ Route::middleware([
     })->name('dashboard');
 
     Route::get('/myAppointments',function(){
-
 return view('myAppointments');
-
     })->name('appointments');
+
     Route::post('/uploadPhoto/{user_id}','App\Http\Controllers\ImageUploader@saveUserImage');
     Route::get('uploadPhoto',function (){
+    return view('uploadImage');
+    });
 
+    Route::post('uploadMedicalFile/{user_id}','App\Http\Controllers\medicalRecordUpload@storeMedicalFile');
+    Route::get('/myMedicalRecords',function (){
 
-        return view('uploadImage');
+return view('medicalRecord');
+
     });
    
 });

@@ -1,0 +1,104 @@
+.medical-records{
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    &__table{
+
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #fff;
+        padding: 1%;
+    
+        &--title{
+  width: 100%;
+            font-size: 30px;
+            color: #000;
+            font-weight: bold;
+            margin: 1% auto;
+
+        }
+        &--rows{
+width: 100%;
+display: flex;
+flex-direction:row;
+flex-wrap: wrap;
+gap: 15px;
+align-items: center;
+
+        }
+        .row{
+
+            width: 49%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin: 0.3rem 0;
+            border: 2px solid #662D91;
+            background-color: #f1f1f1;
+            padding: 1.5rem;
+        }
+    .data-field{
+
+        font-weight: bold;
+        font-size: 20px;
+        color: #000;
+    }
+    .data-delete{
+width: 25%;
+        background-color: rgba(255, 0, 0, 0.815);
+        color: #fff;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 5px;
+        border-radius: 10px;
+    }
+    .data-download{
+width: 25%;
+        background-color:#662D91;
+        color: #fff;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 5px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .data-add{
+
+        width: max-content;
+        background-color:#658A2E;
+        color: #fff;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 5px;
+        border-radius: 10px;
+        text-align: center;
+        cursor: pointer;
+
+    }
+    .data-input-h{
+
+        display: none;
+    }
+    .data-submit{
+
+        background-color: #662D91;
+        color: #fff;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 5px;
+        width: 20%;
+        margin: auto;
+        border-radius: 10px;
+    }
+    .shady-btn{
+
+        background-color: #662d916c;
+    }
+    }
+}

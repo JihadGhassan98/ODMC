@@ -22,6 +22,7 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/Sass/navbar.scss','public/css')
     .sass('resources/Sass/footer.scss','public/css')
     .sass('resources/Sass/uploadPhoto.scss','public/css')
+    .sass('resources/Sass/medicalRecords.scss','public/css')
     .sass('resources/Sass/userAppointments.scss','public/css');
 
 
