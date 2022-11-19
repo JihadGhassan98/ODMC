@@ -32,6 +32,30 @@
 
 </form>
 
+<span class="db-body__saperator">{{App::isLocale('ar')? 'الحساسيات والأدوية':'Allergies And Medicines'}}</span>
+<div class="medical-records__specs">
+
+<div class="medical-records__specs--table">
+<span class="medical-records__specs--title">{{App::isLocale('ar')? 'الحساسيات':'Allergies'}}</span>
+@foreach($allergies as $allergy)
+<span class="table-item">{{App::isLocale('ar')? $allergy->name_ar:$allergy->name_en }}<button wire:click="deleteAllergy({{$allergy->id}})" class="table-delete"><i class="fa fa-trash" aria-hidden="true"></i></button></span>
+@endforeach
+<span class="table-item">
+<input type="text" class="table-add" placeholder="{{App::isLocale('ar')? 'أدخل اسم الحساسية باللغة العربية':'Enter Allergy Name In Arabic'}}" wire:model="allergyName_ar">
+<input type="text" class="table-add" placeholder="{{App::isLocale('ar')? 'أدخل اسم الحساسية باللغة الإنجليزية':'Enter Allergy Name In English'}}" wire:model="allergyName_en">
+<button wire:click="AddAllergy()" class="table-new">{{App::isLocale('ar')? 'إضافة':'ADD'}} <i class="fa fa-plus" aria-hidden="true"></i></button></span>
+</div>
+<div class="medical-records__specs--table">
+<span class="medical-records__specs--title">{{App::isLocale('ar')? 'الأدوية':'Medicines'}}</span>
+@foreach($drugs as $drug)
+<span class="table-item">{{$drug->name}} <button wire:click="deleteDrug({{$drug->id}})" class="table-delete"><i class="fa fa-trash" aria-hidden="true"></i></button></span>
+@endforeach
+<span class="table-item"><input  type="text" class="table-add" placeholder="{{App::isLocale('ar')? 'أدخل اسم الدواء':'Enter Medicine Name'}}" wire:model="medicineName"><button wire:click="AddDrug()" class="table-new">{{App::isLocale('ar')? 'إضافة':'ADD'}} <i class="fa fa-plus" aria-hidden="true"></i></button></span>
+</div>
+</div>
+
+
+
 
 </main>
 </div>

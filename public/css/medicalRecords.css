@@ -84,15 +84,77 @@
   font-size: 18px;
   padding: 5px;
   width: 20%;
-  margin: auto;
   border-radius: 10px;
 }
 .medical-records__table .shady-btn {
   background-color: rgba(102, 45, 145, 0.4235294118);
 }
+.medical-records__specs {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1%;
+}
+.medical-records__specs--title {
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+  margin: 1%;
+}
+.medical-records__specs--table {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.medical-records__specs .table-item {
+  border: 1px solid #662D91;
+  padding: 3px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: #000;
+  font-weight: 600;
+  align-items: center;
+  gap: 5px;
+  width: 80%;
+  font-size: 20px;
+}
+.medical-records__specs .table-delete {
+  background-color: rgba(255, 0, 0, 0.815);
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px;
+}
+.medical-records__specs .table-add {
+  width: 70%;
+}
+.medical-records__specs .table-new {
+  background-color: #658A2E;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px;
+}
 
 @media screen and (max-width: 1024px) {
   .medical-records__table .row {
     width: 100%;
+  }
+  .medical-records__specs--table {
+    width: 100%;
+  }
+  .medical-records__specs .table-item {
+    width: 100%;
+  }
+  .medical-records__specs .table-add {
+    width: 100%;
+  }
+  .medical-records__specs--title {
+    margin: 1rem;
   }
 }

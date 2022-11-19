@@ -1241,6 +1241,12 @@ select {
 .inline-flex {
   display: inline-flex;
 }
+.table {
+  display: table;
+}
+.table-row {
+  display: table-row;
+}
 .grid {
   display: grid;
 }
