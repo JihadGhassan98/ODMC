@@ -11,7 +11,7 @@
 </div>
 
 <div class="navbar__links  desktop-links">
-    <a href="#" class="navbar__links--link">{{App::isLocale('ar')? 'الرئيسية':'Home'}}</a>
+    <a href="{{url('/')}}" class="navbar__links--link">{{App::isLocale('ar')? 'الرئيسية':'Home'}}</a>
     <a href="#" class="navbar__links--link">{{App::isLocale('ar')? 'العيادات':'Clinics'}}</a>
     <a href="#" class="navbar__links--link">{{App::isLocale('ar')? 'العروض':'Offers'}}</a>
     <a href="#" class="navbar__links--link">{{App::isLocale('ar')? 'من نحن':'About Us'}}</a>
@@ -40,7 +40,7 @@
 <a href="{{route('login')}}" class="mobile-links__link auth-link">{{App::isLocale('ar')? 'تسجيل الدخول':'Log In'}}</a>
 <a href="{{route('register')}}" class="mobile-links__link auth-link-2">{{App::isLocale('ar')? 'التسجيل':'Register'}}</a>
 @endauth
-<a href="#" class="mobile-links__link">{{App::isLocale('ar')? 'الرئيسية':'Home'}}</a>
+<a href="{{url('/')}}" class="mobile-links__link">{{App::isLocale('ar')? 'الرئيسية':'Home'}}</a>
     <a href="#" class="mobile-links__link">{{App::isLocale('ar')? 'العيادات':'Clinics'}}</a>
     <a href="#" class="mobile-links__link">{{App::isLocale('ar')? 'العروض':'Offers'}}</a>
     <a href="#" class="mobile-links__link">{{App::isLocale('ar')? 'من نحن':'About Us'}}</a>

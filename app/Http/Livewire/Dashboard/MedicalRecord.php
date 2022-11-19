@@ -19,5 +19,6 @@ class MedicalRecord extends Component
         $user = User::find($id);
         $user->update(['medical_record_path' => null]);
         $user->save();
+       
     }
 }
