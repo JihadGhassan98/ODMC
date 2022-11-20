@@ -15,8 +15,6 @@ use Illuminate\Http\Request;
 class medicalRecordUpload extends Controller
 {
     public function storeMedicalFile(Request $request,$id){
-
-
         // $id=Auth::user()->id;
         $item=User::find($id);
         $imageName= $id.substr(Auth::user()->name,0,4).time().'.' . $request->medicalFile->getClientOriginalExtension();
@@ -25,7 +23,5 @@ class medicalRecordUpload extends Controller
            $file = $request->file('medicalFile');
            $file->move('medicalReports/',$imageName);
             return back();
-   
-
     }
 }
