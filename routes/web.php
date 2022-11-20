@@ -45,5 +45,10 @@ return view('myAppointments');
 return view('medicalRecord');
 
     });
+    Route::get('/volunteerWithUs',function (){
+
+
+        return view('volunteerRequest');
+    });
    
 });

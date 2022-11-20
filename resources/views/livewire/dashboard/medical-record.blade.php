@@ -34,7 +34,7 @@
 
 <span class="db-body__saperator">{{App::isLocale('ar')? 'الحساسيات والأدوية':'Allergies And Medicines'}}</span>
 <div class="medical-records__specs">
-
+<!-- Allergies -->
 <div class="medical-records__specs--table">
 <span class="medical-records__specs--title">{{App::isLocale('ar')? 'الحساسيات':'Allergies'}}</span>
 @foreach($allergies as $allergy)
@@ -45,12 +45,29 @@
 <input type="text" class="table-add" placeholder="{{App::isLocale('ar')? 'أدخل اسم الحساسية باللغة الإنجليزية':'Enter Allergy Name In English'}}" wire:model="allergyName_en">
 <button wire:click="AddAllergy()" class="table-new">{{App::isLocale('ar')? 'إضافة':'ADD'}} <i class="fa fa-plus" aria-hidden="true"></i></button></span>
 </div>
+<!-- meds -->
 <div class="medical-records__specs--table">
 <span class="medical-records__specs--title">{{App::isLocale('ar')? 'الأدوية':'Medicines'}}</span>
 @foreach($drugs as $drug)
 <span class="table-item">{{$drug->name}} <button wire:click="deleteDrug({{$drug->id}})" class="table-delete"><i class="fa fa-trash" aria-hidden="true"></i></button></span>
 @endforeach
 <span class="table-item"><input  type="text" class="table-add" placeholder="{{App::isLocale('ar')? 'أدخل اسم الدواء':'Enter Medicine Name'}}" wire:model="medicineName"><button wire:click="AddDrug()" class="table-new">{{App::isLocale('ar')? 'إضافة':'ADD'}} <i class="fa fa-plus" aria-hidden="true"></i></button></span>
+</div>
+<!-- disabilities -->
+<div class="medical-records__specs--table">
+<span class="medical-records__specs--title">{{App::isLocale('ar')? 'الإعاقات':'Disabilities'}}</span>
+@foreach($disabilities as $disability)
+<span class="table-item">{{$disability->name}} <button wire:click="deleteDisability({{$disability->id}})" class="table-delete"><i class="fa fa-trash" aria-hidden="true"></i></button></span>
+@endforeach
+<span class="table-item"><input  type="text" class="table-add" placeholder="{{App::isLocale('ar')? 'أدخل اسم الإعاقة':'Enter Disability Name'}}" wire:model="disability"><button wire:click="AddDisability()" class="table-new">{{App::isLocale('ar')? 'إضافة':'ADD'}} <i class="fa fa-plus" aria-hidden="true"></i></button></span>
+</div>
+<!-- diseases -->
+<div class="medical-records__specs--table">
+<span class="medical-records__specs--title">{{App::isLocale('ar')? 'الأمراض المزمنة':'Choronic Diseases'}}</span>
+@foreach($diseases as $disease)
+<span class="table-item">{{$disease->name}} <button wire:click="deleteDisease({{$disease->id}})" class="table-delete"><i class="fa fa-trash" aria-hidden="true"></i></button></span>
+@endforeach
+<span class="table-item"><input  type="text" class="table-add" placeholder="{{App::isLocale('ar')? 'أدخل اسم المرض':'Enter Disease Name'}}" wire:model="disease"><button wire:click="AddDisease()" class="table-new">{{App::isLocale('ar')? 'إضافة':'ADD'}} <i class="fa fa-plus" aria-hidden="true"></i></button></span>
 </div>
 </div>
 

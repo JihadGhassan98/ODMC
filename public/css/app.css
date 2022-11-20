@@ -1241,12 +1241,6 @@ select {
 .inline-flex {
   display: inline-flex;
 }
-.table {
-  display: table;
-}
-.table-row {
-  display: table-row;
-}
 .grid {
   display: grid;
 }
@@ -1716,10 +1710,6 @@ select {
   font-size: 0.75rem;
   line-height: 1rem;
 }
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -1727,6 +1717,10 @@ select {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 .font-medium {
   font-weight: 500;
