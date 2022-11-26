@@ -21,9 +21,16 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('findVolunteer')">
                         {{ App::isLocale('ar')? 'البحث عن متطوع':'Find A Companion' }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ url('/volunteerWithUs') }}" :active="request()->routeIs('becomeVolunteer')">
+                    @if(Auth::user()->type == 2)
+                    <x-jet-nav-link href="{{ url('/') }}" :active="request()->routeIs('volunteerWithUs')">
+                    {{ App::isLocale('ar')? 'طلبات التطوع':'Volunteer Requests' }}
+                    </x-jet-nav-link>
+                    @else
+                    <x-jet-nav-link href="{{ url('/volunteerWithUs') }}" :active="request()->routeIs('volunteerWithUs')">
                     {{ App::isLocale('ar')? 'تطوع معنا':'Volunteer With Us' }}
                     </x-jet-nav-link>
+
+                    @endif
                     @if(App::isLocale('en'))
                     <x-jet-nav-link href="{{url('lang/ar')}}">
                     العربية
@@ -169,20 +176,28 @@
             {{ App::isLocale('ar')? 'البحث عن متطوع':'Find A Companion' }}
             </x-jet-responsive-nav-link>
         </div>
+        @if(Auth::user()->type == 2)
         <div class=" pb-1 space-y-1">
-            <x-jet-responsive-nav-link href="{{ url('/volunteerWithUs') }}" :active="request()->routeIs('becomeVolunteer')">
+            <x-jet-responsive-nav-link href="{{ url('/') }}" :active="request()->routeIs('volunteerWithUs')">
+            {{ App::isLocale('ar')? 'طلبات التطوع':'Volunteer Requests' }}
+            </x-jet-responsive-nav-link>
+        </div>
+        @else
+        <div class=" pb-1 space-y-1">
+            <x-jet-responsive-nav-link href="{{ url('/volunteerWithUs') }}" :active="request()->routeIs('volunteerWithUs')">
             {{ App::isLocale('ar')? 'تطوع معنا':'Volunteer With Us' }}
             </x-jet-responsive-nav-link>
         </div>
+        @endif
         @if(App::isLocale('ar'))
         <div class=" pb-1 space-y-1">
-            <x-jet-responsive-nav-link href="{{url('lang/en')}}" :active="request()->routeIs('becomeVolunteer')">
+            <x-jet-responsive-nav-link href="{{url('lang/en')}}">
             English
             </x-jet-responsive-nav-link>
         </div>
         @else
         <div class=" pb-1 space-y-1">
-            <x-jet-responsive-nav-link href="{{url('lang/ar')}}" :active="request()->routeIs('becomeVolunteer')">
+            <x-jet-responsive-nav-link href="{{url('lang/ar')}}">
             العربية
             </x-jet-responsive-nav-link>
         </div>
