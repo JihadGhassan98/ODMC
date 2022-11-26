@@ -1,1 +1,118 @@
+.volunteer-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  min-height: 100vh;
+}
+.volunteer-form__volunteer-header {
+  padding: 1%;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: #658A2E;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+}
+.volunteer-form__volunteer-text {
+  font-weight: 600;
+  font-size: 25px;
+  color: #000;
+  padding: 1%;
+  text-align: center;
+}
+.volunteer-form__input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 70%;
+}
+.volunteer-form__input--label {
+  font-weight: bold;
+  color: #fff;
+  background-color: #662D91;
+  padding: 1%;
+  font-size: 20px;
+}
+.volunteer-form__input--legend {
+  font-size: 16px;
+  font-weight: 600;
+}
+.volunteer-form__input .data-add {
+  width: -moz-max-content;
+  width: max-content;
+  background-color: #658A2E;
+  color: #fff;
+  font-weight: bold;
+  font-size: 25px;
+  margin: auto;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+.volunteer-form__input .data-input-h {
+  display: none;
+}
+.volunteer-form__input .confirmation-policy {
+  display: flex;
+  gap: 5px;
+  margin: auto;
+  align-items: center;
+}
+.volunteer-form__input .usage-link {
+  color: #662D91;
+  text-decoration: underline;
+}
+.volunteer-form__submit {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #662D91 !important;
+  padding: 10px;
+}
 
+.volunteer-has-applied {
+  width: 70%;
+  margin: 3% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.volunteer-has-applied__head {
+  width: 100%;
+  background-color: #662D91;
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+}
+.volunteer-has-applied__body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #000;
+  background-color: #fff;
+  padding: 2%;
+}
+.volunteer-has-applied__cta {
+  background-color: #658A2E;
+  color: #fff;
+  margin: 2% auto;
+  font-size: 20px;
+  padding: 1%;
+}
+
+@media screen and (max-width: 1024px) {
+  .volunteer-form__input {
+    width: 90%;
+  }
+  .volunteer-form__input .confirmation-policy {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

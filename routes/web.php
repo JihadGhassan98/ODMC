@@ -45,6 +45,7 @@ return view('myAppointments');
 return view('medicalRecord');
 
     });
+    Route::post('saveVolunteerRequest','App\Http\Controllers\volunteerRequests@putVolunteerRequest');
     Route::get('/volunteerWithUs',function (){
 
 

@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="/css/uploadPhoto.css">
   <link rel="stylesheet" href="/css/welcomeUser.css">
   <link rel="stylesheet" href="/css/medicalRecords.css">
+  <link rel="stylesheet" href="/css/volunteerRequest.css">
   <link rel="stylesheet" href="/css/app.css">
   <script defer src="/js/app.js"></script>
     </head>
