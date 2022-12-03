@@ -1677,11 +1677,11 @@ select {
 .pb-1 {
   padding-bottom: 0.25rem;
 }
-.pt-8 {
-  padding-top: 2rem;
-}
 .pt-3 {
   padding-top: 0.75rem;
+}
+.pt-8 {
+  padding-top: 2rem;
 }
 .text-left {
   text-align: left;
@@ -1916,7 +1916,7 @@ select {
 
 .auth-logo{
 
-    width: 70%;
+    width: 35%;
     margin: auto;
 }
 .main-btn{
@@ -1972,6 +1972,17 @@ color: #fff;
 transition: all .2s ease-in-out;
 
 }
+.auth-bar{
+
+    width:100%;
+    display: flex;
+    flex-direction: row;
+
+}
+.auth-padding{
+
+    padding: 5% !important;
+}
 
 @media screen and (max-width:768px) {
 
@@ -1989,6 +2000,10 @@ transition: all .2s ease-in-out;
 
         width: 70%;
         margin: auto;
+    }
+
+    .auth-logo{
+    width: 70%;
     }
 }
 
