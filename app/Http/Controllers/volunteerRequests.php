@@ -12,6 +12,7 @@ class volunteerRequests extends Controller
 {
     
     public function putVolunteerRequest(Request $request){
+        if($request->certificate){
         $certificatePath=rand().substr(Auth::user()->name,0,4).time().'.' . $request->certificate->getClientOriginalExtension();
         Volunteer::create([
          'user_id'=>Auth::user()->id,
@@ -23,7 +24,18 @@ class volunteerRequests extends Controller
         $file = $request->file('certificate');
         $file->move('medicalReports/',$certificatePath);
         return back();
+    }
+    else{
 
+        Volunteer::create([
+            'user_id'=>Auth::user()->id,
+            'current_city_id'=>$request->city,
+            'certificate_path'=>null,
+   
+   
+           ]);
+           return back();
+    }
 
 
     }

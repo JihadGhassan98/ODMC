@@ -1,0 +1,68 @@
+.all-volunteers {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.all-volunteers__requests {
+  width: 100%;
+  padding: 10px;
+  color: #000;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.all-volunteers__requests--title {
+  width: 100%;
+  font-size: 30px;
+  font-weight: bold;
+}
+.all-volunteers__requests--request {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-wrap: wrap;
+  border: 1px solid #662D91;
+  background-color: #fff;
+  padding: 10px;
+  justify-content: space-between;
+}
+.all-volunteers__requests .request_img {
+  width: 100%;
+}
+.all-volunteers__requests .request_data {
+  font-weight: 600;
+}
+.all-volunteers__requests .request-ctas {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: 1rem 0;
+}
+.all-volunteers__requests .request_cta-accept {
+  background-color: green;
+  color: #fff;
+  padding: 1%;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+}
+.all-volunteers__requests .request_cta-reject {
+  color: #fff;
+  background-color: red;
+  text-align: center;
+  padding: 1%;
+  width: 50%;
+  margin: auto;
+}
+.all-volunteers__requests .request_file {
+  background-color: #662D91;
+  color: #fff;
+  padding: 10px;
+}
+.all-volunteers__requests .request_no-file {
+  background-color: #925bbd;
+  color: #fff;
+  padding: 10px;
+}

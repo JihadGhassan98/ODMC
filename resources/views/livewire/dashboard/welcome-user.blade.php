@@ -3,6 +3,7 @@
      <span class="db-body__saperator">{{App::isLocale('ar')? 'ماذا تود أن تفعل؟':'What Would You Like To Do ?'}}</span>     
      <section class="db-user-links">
    
+      
       <a href="{{url('/dashboard')}}" class="db-user-links__link">
           <img src="/systemImages/book.jpg" alt="" class="db-user-links__link--image">
           <div class="db-user-links__link--link-context">

@@ -51,5 +51,12 @@ return view('medicalRecord');
 
         return view('volunteerRequest');
     });
+
+    Route::get('allVolunteers',function (){
+
+
+        return view('allVolunteers');
+    });
+
    
 });
