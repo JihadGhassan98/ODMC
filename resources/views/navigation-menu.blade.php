@@ -22,11 +22,11 @@
                         {{ App::isLocale('ar')? 'البحث عن متطوع':'Find A Companion' }}
                     </x-jet-nav-link>
                     @if(Auth::user()->type == 2)
-                    <x-jet-nav-link href="{{ url('/volunteering') }}" :active="request()->routeIs('volunteerWithUs')">
+                    <x-jet-nav-link href="{{ url('/volunteer') }}" :active="request()->routeIs('volunteer')">
                     {{ App::isLocale('ar')? 'طلبات التطوع':'Volunteer Requests' }}
                     </x-jet-nav-link>
                     @elseif(Auth::user()->type == 4)
-                    <x-jet-nav-link href="{{ url('/allVolunteers') }}" :active="request()->routeIs('volunteerWithUs')">
+                    <x-jet-nav-link href="{{ url('/allVolunteers') }}" :active="request()->routeIs('allVolunteers')">
                     {{ App::isLocale('ar')? 'المتطوعون':'Volunteers' }}
                     </x-jet-nav-link>
 
@@ -184,7 +184,7 @@
         </div>
         @if(Auth::user()->type == 2)
         <div class=" pb-1 space-y-1">
-            <x-jet-responsive-nav-link href="{{ url('/') }}" :active="request()->routeIs('volunteerWithUs')">
+            <x-jet-responsive-nav-link href="{{ url('/volunteer') }}" :active="request()->routeIs('volunteerWithUs')">
             {{ App::isLocale('ar')? 'طلبات التطوع':'Volunteer Requests' }}
             </x-jet-responsive-nav-link>
         </div>

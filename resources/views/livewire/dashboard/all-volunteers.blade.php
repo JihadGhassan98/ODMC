@@ -3,7 +3,7 @@
 <span class="db-body__saperator">{{App::isLocale('ar')? 'المتطوعون':'Volunteers'}}</span>
 <section class="all-volunteers__requests">
    <span class="all-volunteers__requests--title">{{App::isLocale('ar')? 'طلبات التطوع':'Volunteer Requests'}} ({{ count($volunteerRequests)}})</span>
-@foreach($volunteerRequests as $VReq)
+@forelse($volunteerRequests as $VReq)
    <div class="all-volunteers__requests--request">
     <img src="{{url('/userImages/'.$VReq->profile_photo_path)}}" alt="" class="request_img">
     <span class="request_data"><b>{{App::isLocale('ar')? 'الإسم':'Name'}}: </b> {{$VReq->name}}</span>
@@ -27,14 +27,16 @@
     <button Wire:click="rejectVolunteer({{$VReq->volID}})" class="request_cta-reject">{{App::isLocale('ar')? 'رفض':'Reject'}}</button>
    </div>
    </div>
-   @endforeach
+   @empty
+   <span class="request_none">{{App::isLocale('ar')? 'لا يوجد طلبات جديدة':'There Are No New Requests'}}</span>
+   @endforelse
 </section>
 
 
 <!-- All Volunteers - accepted -->
 <section class="all-volunteers__requests">
    <span class="all-volunteers__requests--title">{{App::isLocale('ar')? 'المتطوعون':'Volunteers'}} ({{ count($volunteers)}})</span>
-@foreach($volunteers as $VReq)
+@forelse($volunteers as $VReq)
    <div class="all-volunteers__requests--request">
     <img src="{{url('/userImages/'.$VReq->profile_photo_path)}}" alt="" class="request_img">
     <span class="request_data"><b>{{App::isLocale('ar')? 'الإسم':'Name'}}: </b> {{$VReq->name}}</span>
@@ -48,6 +50,7 @@
     <span class="request_data"><b>{{App::isLocale('ar')? 'الهاتف':'Phone'}}: </b> {{$VReq->phone}}</span>
     <span class="request_data"><b>{{App::isLocale('ar')? 'البريد الإلكتروني':'Email'}}: </b> {{$VReq->email}}</span>
     <span class="request_data"><b>{{App::isLocale('ar')? 'المدينة':'City'}}: </b> {{App::isLocale('ar')? $VReq->city_ar:$VReq->city_en}}</span>
+    <span class="request_data"><b>{{App::isLocale('ar')? 'النقاط':'Points'}}: </b> {{number_format($VReq->points,2)}}</span>
     @if($VReq->certificate_path)
     <span class="request_data"><a href="{{url('/medicalReports/'.$VReq->certificate_path)}}" download class="request_file">{{App::isLocale('ar')? 'تحميل السيرة الذاتية':'Download Resume'}}</a></span>
     @else
@@ -58,7 +61,9 @@
     <button Wire:click="deleteVolunteer({{$VReq->userID}},{{$VReq->volID}})" class="request_cta-reject">{{App::isLocale('ar')? 'حذف':'Delete'}}</button>
    </div>
    </div>
-   @endforeach
+   @empty
+   <span class="request_none">{{App::isLocale('ar')? 'لا يوجد متطوعون حاليآ ':'There Are No Volunteers Right Now'}}</span>
+   @endforelse
 </section>
 
 </main>

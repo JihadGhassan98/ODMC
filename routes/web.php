@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 /*Localization route*/
+
 Route::get('lang/{locale}', 'App\Http\Controllers\LocalizationController@lang');
 /*End Locaalization route */
 
@@ -30,33 +31,35 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/myAppointments',function(){
-return view('myAppointments');
+    Route::get('/myAppointments', function () {
+        return view('myAppointments');
     })->name('appointments');
 
-    Route::post('/uploadPhoto/{user_id}','App\Http\Controllers\ImageUploader@saveUserImage');
-    Route::get('uploadPhoto',function (){
-    return view('uploadImage');
+    Route::post('/uploadPhoto/{user_id}', 'App\Http\Controllers\ImageUploader@saveUserImage');
+    Route::get('uploadPhoto', function () {
+        return view('uploadImage');
     });
 
-    Route::post('uploadMedicalFile/{user_id}','App\Http\Controllers\medicalRecordUpload@storeMedicalFile');
-    Route::get('/myMedicalRecords',function (){
+    Route::post('uploadMedicalFile/{user_id}', 'App\Http\Controllers\medicalRecordUpload@storeMedicalFile');
+    Route::get('/myMedicalRecords', function () {
 
-return view('medicalRecord');
-
+        return view('medicalRecord');
     });
-    Route::post('saveVolunteerRequest','App\Http\Controllers\volunteerRequests@putVolunteerRequest');
-    Route::get('/volunteerWithUs',function (){
+    Route::post('saveVolunteerRequest', 'App\Http\Controllers\volunteerRequests@putVolunteerRequest');
+    Route::get('/volunteerWithUs', function () {
 
 
         return view('volunteerRequest');
     });
 
-    Route::get('allVolunteers',function (){
+    Route::get('allVolunteers', function () {
 
 
         return view('allVolunteers');
     });
 
-   
+    Route::get('volunteer', function () {
+
+        return view('volunteerDashboard');
+    });
 });
