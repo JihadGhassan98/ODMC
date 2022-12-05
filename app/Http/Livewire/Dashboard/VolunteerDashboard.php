@@ -15,6 +15,7 @@ class VolunteerDashboard extends Component
         return view('livewire.dashboard.volunteer-dashboard',[
           'cities'=>$this->getCities(),
           'currVolunteer'=>Volunteer::where('user_id',Auth::user()->id)->first(),
+          
 
         ]);
     }
