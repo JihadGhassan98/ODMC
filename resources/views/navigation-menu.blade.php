@@ -29,6 +29,12 @@
                     <x-jet-nav-link href="{{ url('/allVolunteers') }}" :active="request()->routeIs('allVolunteers')">
                     {{ App::isLocale('ar')? 'المتطوعون':'Volunteers' }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ url('/allClinics') }}" :active="request()->routeIs('allVolunteers')">
+                    {{ App::isLocale('ar')? 'العيادات':'Clinics' }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ url('/allUsers') }}" :active="request()->routeIs('allVolunteers')">
+                    {{ App::isLocale('ar')? 'المستخدمون':'Users' }}
+                    </x-jet-nav-link>
 
                     
                     @else
@@ -192,6 +198,16 @@
         <div class=" pb-1 space-y-1">
             <x-jet-responsive-nav-link href="{{ url('/allVolunteers') }}" :active="request()->routeIs('volunteerWithUs')">
             {{ App::isLocale('ar')? 'المتطوعون':'Volunteers' }} 
+            </x-jet-responsive-nav-link>
+        </div>
+        <div class=" pb-1 space-y-1">
+            <x-jet-responsive-nav-link href="{{ url('/allUsers') }}" :active="request()->routeIs('volunteerWithUs')">
+            {{ App::isLocale('ar')? 'المستخدمون':'Users' }}
+            </x-jet-responsive-nav-link>
+        </div>
+        <div class=" pb-1 space-y-1">
+            <x-jet-responsive-nav-link href="{{ url('/allClinics') }}" :active="request()->routeIs('volunteerWithUs')">
+            {{ App::isLocale('ar')? 'العيادات':'Clinics' }}
             </x-jet-responsive-nav-link>
         </div>
         

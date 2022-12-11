@@ -18,7 +18,7 @@
     <a href="#" class="navbar__links--link">{{App::isLocale('ar')? 'تواصل معنا':'Contact Us'}}</a>
 
     @auth
-    <form method="POST" action="{{route('logout')}}" class="navbar__links--link auth-link-2">@csrf <button class="auth-logout">{{App::isLocale('ar')? 'تسجيل الخروج':'Log Out'}}</button></form>
+    <form method="POST" action="{{route('logout')}}" class="navbar__links--link auth-link">@csrf <button class="auth-link">{{App::isLocale('ar')? 'تسجيل الخروج':'Log Out'}}</button></form>
     <a href="{{route('dashboard')}}" class="navbar__links--link auth-link"><img src="/userImages/{{Auth::user()->profile_photo_path}}" alt="" class="auth-img">{{Auth::user()->name}}</a>
 
     @else

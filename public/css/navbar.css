@@ -44,6 +44,7 @@
   justify-content: center;
   gap: 10px;
   align-items: center;
+  border: none;
 }
 .navbar__links .auth-img {
   width: 50px;

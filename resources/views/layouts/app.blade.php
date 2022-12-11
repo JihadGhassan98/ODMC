@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="/css/medicalRecords.css">
     <link rel="stylesheet" href="/css/volunteerRequest.css">
     <link rel="stylesheet" href="/css/allVolunteers.css">
+    <link rel="stylesheet" href="/css/allUsers.css">
+    <link rel="stylesheet" href="/css/allClinics.css">
     <link rel="stylesheet" href="/css/volunteerDashboard.css">
     <link rel="stylesheet" href="/css/app.css">
     <script defer src="/js/app.js"></script>

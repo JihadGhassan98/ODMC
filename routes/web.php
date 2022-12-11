@@ -57,6 +57,16 @@ Route::middleware([
 
         return view('allVolunteers');
     });
+    Route::get('allUsers', function () {
+
+
+        return view('allUsers');
+    });
+    Route::get('allClinics', function () {
+
+
+        return view('allClinics');
+    });
 
     Route::get('volunteer', function () {
 
