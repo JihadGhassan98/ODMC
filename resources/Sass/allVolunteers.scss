@@ -33,6 +33,18 @@ width: 100%;
         
 
         }
+        &--search{
+
+            width: 100%;
+        }
+        .search-bar{
+
+            width: 30%;
+            padding: 10px;
+            border: 2px solid #662D91;
+
+        }
+       
         .request_img{
 
             width: 100%;
@@ -42,6 +54,22 @@ width: 100%;
 
          
           font-weight: 600;
+          padding: 5px;
+          &:nth-child(even){
+
+            background-color: #e8d9f3;
+
+          }
+          &:nth-child(odd){
+
+            background-color: #faf2ff;
+
+          }
+        }
+        .cv-link{
+
+            display: flex;
+            justify-content: center;
         }
 
         .request-ctas{

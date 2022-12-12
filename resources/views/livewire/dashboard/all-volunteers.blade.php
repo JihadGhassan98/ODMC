@@ -18,7 +18,7 @@
     <span class="request_data"><b>{{App::isLocale('ar')? 'البريد الإلكتروني':'Email'}}: </b> {{$VReq->email}}</span>
     <span class="request_data"><b>{{App::isLocale('ar')? 'المدينة':'City'}}: </b> {{App::isLocale('ar')? $VReq->city_ar:$VReq->city_en}}</span>
     @if($VReq->certificate_path)
-    <span class="request_data"><a href="{{url('/medicalReports/'.$VReq->certificate_path)}}" download class="request_file">{{App::isLocale('ar')? 'تحميل السيرة الذاتية':'Download Resume'}}</a></span>
+    <span class="request_data cv-link"><a href="{{url('/medicalReports/'.$VReq->certificate_path)}}" download class="request_file">{{App::isLocale('ar')? 'تحميل السيرة الذاتية':'Download Resume'}}</a></span>
     @else
     <span class="request_data"><button class="request_no-file" Disabled>{{App::isLocale('ar')? 'لم يتم تحميل سيرة ذاتية':'No Resume Was uploaded'}}</button></span>
     @endif
@@ -36,6 +36,12 @@
 <!-- All Volunteers - accepted -->
 <section class="all-volunteers__requests">
    <span class="all-volunteers__requests--title">{{App::isLocale('ar')? 'المتطوعون':'Volunteers'}} ({{ count($volunteers)}})</span>
+
+   <div class="all-volunteers__requests--search">
+      <input placeholder="{{App::isLocale('ar')? 'البحث عن متطوع...':'Search FOr A Volunteer...'}}" type="text" class="search-bar" wire:model="searchKey">
+ 
+   </div>
+
 @forelse($volunteers as $VReq)
    <div class="all-volunteers__requests--request">
     <img src="{{url('/userImages/'.$VReq->profile_photo_path)}}" alt="" class="request_img">
@@ -52,7 +58,7 @@
     <span class="request_data"><b>{{App::isLocale('ar')? 'المدينة':'City'}}: </b> {{App::isLocale('ar')? $VReq->city_ar:$VReq->city_en}}</span>
     <span class="request_data"><b>{{App::isLocale('ar')? 'النقاط':'Points'}}: </b> {{number_format($VReq->points,2)}}</span>
     @if($VReq->certificate_path)
-    <span class="request_data"><a href="{{url('/medicalReports/'.$VReq->certificate_path)}}" download class="request_file">{{App::isLocale('ar')? 'تحميل السيرة الذاتية':'Download Resume'}}</a></span>
+    <span class="request_data cv-link"><a href="{{url('/medicalReports/'.$VReq->certificate_path)}}" download class="request_file">{{App::isLocale('ar')? 'تحميل السيرة الذاتية':'Download Resume'}}</a></span>
     @else
     <span class="request_data"><button class="request_no-file" Disabled>{{App::isLocale('ar')? 'لم يتم تحميل سيرة ذاتية':'No Resume Was uploaded'}}</button></span>
     @endif
@@ -61,6 +67,7 @@
     <button Wire:click="deleteVolunteer({{$VReq->userID}},{{$VReq->volID}})" class="request_cta-reject">{{App::isLocale('ar')? 'حذف':'Delete'}}</button>
    </div>
    </div>
+   <div class="">{{$volunteers->links()}}</div>
    @empty
    <span class="request_none">{{App::isLocale('ar')? 'لا يوجد متطوعون حاليآ ':'There Are No Volunteers Right Now'}}</span>
    @endforelse
