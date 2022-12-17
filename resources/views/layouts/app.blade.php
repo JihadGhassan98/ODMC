@@ -71,6 +71,7 @@
 
     @stack('modals')
     <script src="{{asset('/js/imageUploader.js')}}"></script>
+    <script src="{{asset('/js/body.js')}}"></script>
     @livewireScripts
 </body>
 
