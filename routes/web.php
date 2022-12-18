@@ -62,6 +62,7 @@ Route::middleware([
 
         return view('allUsers');
     });
+    Route::post('/uploadClinicLogo','App\Http\Controllers\ImageUploader@saveClinicLogo');
     Route::get('allClinics', function () {
 
 

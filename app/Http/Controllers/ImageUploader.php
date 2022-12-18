@@ -24,4 +24,11 @@ $id=Auth::user()->id;
 
 }
 
+
+public function saveClinicLogo(Request $request){
+
+    return redirect()->to('/allClinics');
+
+
+}
 }

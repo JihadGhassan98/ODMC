@@ -137,7 +137,11 @@ public function closeAction()
 
 
 public function deleteUser(){
+    $volunteer = Volunteer::where('user_id',Session::get('userID'))->first();
+    if($volunteer != null)
+    $volunteer->delete();
 
+    
 $user= User::find(Session::get('userID'));
 
 $appointments = Appointment::where('user_id',$user->id)->get();
@@ -159,9 +163,9 @@ foreach($clinics as $clinic){
     }
 }
 
-$volunteer = Volunteer::where('user_id',Session::get('userID'))->first();
+$user->delete();
+$this->closeAction();
 
-$volunteer->delete();
 
 }
 

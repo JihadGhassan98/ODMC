@@ -1,7 +1,7 @@
 <div>
 <main class="all-volunteers" dir="{{App::isLocale('ar')? 'rtl':'ltr'}}">
 <span class="db-body__saperator">{{App::isLocale('ar')? 'المستخدمون':'Volunteers'}}</span>
-<span class="all-volunteers__requests--title">{{App::isLocale('ar')? 'المستخدمون':'Users'}} ({{ $userCount}})</span>
+<span class="all-volunteers__requests--title">{{App::isLocale('ar')? 'المستخدمون':'Users'}} ({{ $userCount - 1}})</span>
 <div class="all-volunteers__requests">
 <div class="all-volunteers__requests--search">
       <input placeholder="{{App::isLocale('ar')? 'البحث عن مستخدم...':'Search FOr A User...'}}" type="text" class="search-bar" wire:model="searchKey">
@@ -10,6 +10,7 @@
    <div class="all-volunteers__requests--user-list">
 
    @foreach($users as $user)
+   @if($user->id != Auth::user()->id)
 <div class="user-item">
    <img src="/userImages/{{$user->profile_photo_path}}" alt="" class="user-image">
    <span class="user-data">{{$user->name}}</span>
@@ -67,6 +68,7 @@
 <div class="user-tooltip">{{App::isLocale('ar')? 'حذف':'Delete'}}</div></button>
 
 </div>
+@endif
 
    @endforeach
    </div>
