@@ -31,6 +31,7 @@ date_format($date,"Y-m-d");
 $expiration = date_add($date, date_interval_create_from_date_string("30 days"));
 
 if($validated){
+    $imageName= rand().time().'.' . $request->clinic_logo->getClientOriginalExtension();
 $clinic = Clinic::create([
     'name_en'=>$request->name_en,
     'name_ar'=>$request->name_ar,
@@ -38,7 +39,7 @@ $clinic = Clinic::create([
     'address'=>$request->address,
     'email'=>$request->email,
     'phone'=>$request->phone,
-    'image'=>$request->clinic_logo,
+    'image'=>$imageName,
 'registration_date'=>$registration,
 'expiration_date'=>$expiration,
 'user_id'=>Auth::user()->id,
@@ -46,9 +47,9 @@ $clinic = Clinic::create([
 ]);
 }
 $clinic->save();
-
+$file = $request->file('clinic_logo');
+$file->move('userImages/',$imageName);
 return back();
-
 }
 
 }
