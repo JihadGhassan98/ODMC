@@ -64,11 +64,12 @@ Route::middleware([
     });
     Route::post('/uploadClinicLogo','App\Http\Controllers\ImageUploader@saveClinicLogo');
     Route::get('allClinics', function () {
-
-
         return view('allClinics');
     });
-
+    Route::post('/createClinic','App\Http\Controllers\clinicRequests@createClinic');
+Route::get('/clinicRequest',function (){
+    return view('clinicRequest');
+});
     Route::get('volunteer', function () {
 
         return view('volunteerDashboard');

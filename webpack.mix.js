@@ -28,6 +28,7 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/Sass/allUsers.scss','public/css')
     .sass('resources/Sass/allClinics.scss','public/css')
     .sass('resources/Sass/volunteerDashboard.scss','public/css')
+    .sass('resources/Sass/clinicRequest.scss','public/css')
     .sass('resources/Sass/userAppointments.scss','public/css');
 
 

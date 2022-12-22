@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="/css/allVolunteers.css">
     <link rel="stylesheet" href="/css/allUsers.css">
     <link rel="stylesheet" href="/css/allClinics.css">
+    <link rel="stylesheet" href="/css/clinicRequest.css">
     <link rel="stylesheet" href="/css/volunteerDashboard.css">
     <link rel="stylesheet" href="/css/app.css">
     <script defer src="/js/app.js"></script>
@@ -48,7 +49,11 @@
                 <a href="{{url('/')}}" class="db-header-button">{{App::isLocale('ar')? 'الرئيسية':'Home'}}</a>
                 <a href="{{url('/myMedicalRecords')}}"
                     class="db-header-button">{{App::isLocale('ar')? 'بياناتي الطبية':'My Medical Info'}}</a>
-                <a href="#" class="db-header-button">{{App::isLocale('ar')? 'العيادات ':'Clinics'}}</a>
+                    @if(Auth::user()->type == 2)
+                <a href="/myClinic" class="db-header-button">{{App::isLocale('ar')? 'عيادتي ':'My Clinic'}}</a>
+                @else
+                <a href="/clinicRequest" class="db-header-button">{{App::isLocale('ar')? 'عياداتي ':'My Clinics'}}</a>
+                @endif
                 <a href="{{url('/user/profile')}}"
                     class="db-header-button">{{App::isLocale('ar')? 'الملف الشخصي ':'Profile'}}</a>
                 <a href="#"

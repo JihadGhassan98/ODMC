@@ -1,0 +1,61 @@
+.clinic-form{
+
+
+    width:100%;
+padding: 10px;
+display: flex;
+flex-direction: column;
+gap: 20px;
+&__alert{
+
+    background-color: rgba(255, 0, 0, 0.527);
+    color: #fff;
+    width: max-content;
+    margin: auto;
+    padding: 10px;
+}
+&__clinic-header{
+
+    padding: 1%;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: #658A2E;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+}
+&__clinic-text{
+
+    font-weight: 600;
+    font-size: 25px;
+    color: #000;
+    padding: 1%;
+    text-align: center;
+}
+&__field{
+
+
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+&--label{
+
+    font-weight: bold;
+    font-size: 20px;
+}
+
+}
+&__submit{
+
+    background-color: #662D91 !important;
+    color: #fff;
+    width: max-content;
+    padding: 10px;
+    margin: auto;
+    border-radius: 10px;
+
+}
+
+}
