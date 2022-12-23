@@ -1,5 +1,19 @@
 <div>
+@if($this->applied())
 
+<div class="volunteer-has-applied">
+
+<span class="volunteer-has-applied__head">{{App::isLocale('ar')? 'تم استلام الطلب بنجاح! سيتم اعلامك بنتيجة الطلب قريبآ':'We have successfully recieved your request! You will be notified with the result soon.'}}</span>
+<span class="volunteer-has-applied__body">
+    {{App::isLocale('ar')? 'يمكنك العودة الى الموقع الآن واستكمال التصفح!':'You Can Now Return To The Site And Continue Browsing!'}}
+</span>
+
+<a href="{{url('/')}}" class="volunteer-has-applied__cta">{{App::isLocale('ar')? 'الصفحة الرئيسية':'Home Page'}}</a>
+</div>
+
+
+
+@else
 <form method="POST" action="/createClinic" enctype="multipart/form-data" class="clinic-form" dir="{{App::isLocale('ar')? 'rtl':'ltr'}}">
     @csrf
   
@@ -58,6 +72,6 @@
 
     <button type="submit" class="clinic-form__submit">{{App::isLocale('ar')? 'تقديم الطلب':'Submit Application'}}</button>
 </form>
- 
+ @endif
 
 </div>
