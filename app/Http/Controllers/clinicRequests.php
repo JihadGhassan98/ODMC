@@ -22,13 +22,7 @@ $validated = $request->validate([
     'clinic_logo'=>'required|mimes:jpg,jpeg,png'
 ]);
 
-// $year = date('Y');
-// $day = date('d');
-// $month = date('m');
-// $registration = $year .'-'.$month.'-'.$day;
-// $date = date_create($registration);
-// date_format($date,"Y-m-d");
-// $expiration = date_add($date, date_interval_create_from_date_string("30 days"));
+
 
 if($validated){
     $imageName= rand().time().'.' . $request->clinic_logo->getClientOriginalExtension();
