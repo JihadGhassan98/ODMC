@@ -19,7 +19,8 @@ $validated = $request->validate([
     'address'=>'required',
     'email'=>'required|unique:clinics',
     'phone'=>'required|max:10000000000|unique:clinics',
-    'clinic_logo'=>'required|mimes:jpg,jpeg,png'
+    'clinic_logo'=>'required|mimes:jpg,jpeg,png',
+    'category'=>'required',
 ]);
 
 
@@ -34,6 +35,7 @@ $clinic = Clinic::create([
     'email'=>$request->email,
     'phone'=>$request->phone,
     'image'=>$imageName,
+    'category_id'=>$request->category,
 // 'registration_date'=>$registration,
 // 'expiration_date'=>$expiration,
 'user_id'=>Auth::user()->id,

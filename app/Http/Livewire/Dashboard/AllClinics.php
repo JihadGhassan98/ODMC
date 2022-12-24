@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Dashboard;
 use Livewire\Component;
 use App\Models\Clinic;
 use App\Models\Doctor;
+use App\Models\User;
 use Livewire\WithPagination;
 
 class AllClinics extends Component
@@ -89,7 +90,7 @@ class AllClinics extends Component
                     'cities.name_ar as city_ar',
                     'cities.name_en as city_en',
                     'clinics.*',
-                    'users.id',
+                    'users.name',
                     'categories.name_ar as categ_ar',
                     'categories.name_en as categ_en',
                 ])
@@ -104,7 +105,7 @@ class AllClinics extends Component
                     'cities.name_ar as city_ar',
                     'cities.name_en as city_en',
                     'clinics.*',
-                    'users.id',
+                    'users.name',
                     'categories.name_ar as categ_ar',
                     'categories.name_en as categ_en',
                 ])->paginate(30);
@@ -199,6 +200,7 @@ class AllClinics extends Component
     public function rejectClinic($id)
     {
         $clinic = Clinic::find($id);
+        $clinic->delete();
         
 
     }
@@ -206,6 +208,7 @@ class AllClinics extends Component
     {
 
 
+  
         $year = date('Y');
         $day = date('d');
         $month = date('m');
@@ -224,8 +227,38 @@ class AllClinics extends Component
 
         ]);
         $clinic->save();
+        $owner = User::join('clinics','users.id','clinics.user_id')->where('clinics.id',$id)->select(['users.*'])->first();
+        if($owner->type != 4){
+
+        $owner->update(['type'=>3]);
+        $owner->save();
+
+        };
+
 
         
 
+    }
+
+
+
+    public function activateClinic($id){
+
+
+        $clinic = Clinic::find($id);
+        $clinic->update([
+        'active'=>1,
+        ]);
+        $clinic->save();
+    }
+
+    public function deactivateClinic($id){
+
+
+        $clinic = Clinic::find($id);
+        $clinic->update([
+        'active'=>0,
+        ]);
+        $clinic->save();
     }
 }

@@ -45,6 +45,15 @@
             @endforeach
         </select>
      </div>
+     <div class="clinic-form__field">
+        <label for="" class="clinic-form__field--label">{{App::isLocale('ar')? 'الفئة':'Category'}}</label>
+        <select required name="category" id="" class="clinic-form__field--input">
+            <option value=""> {{App::isLocale('ar')? '--اختر--':'--Choose--'}}</option>
+            @foreach($categories as $categ)
+            <option value="{{$categ->id}}">{{App::isLocale('ar')? $categ->name_ar:$categ->name_en}}</option>
+            @endforeach
+        </select>
+     </div>
 
      <div class="clinic-form__field">
         <label for="" class="clinic-form__field--label">{{App::isLocale('ar')? 'الإسم بالعربية':'Name In Arabic'}}</label>

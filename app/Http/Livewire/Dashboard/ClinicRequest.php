@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Dashboard;
 use Livewire\Component;
 use App\Models\Citie;
 use App\Models\Clinic;
+use App\Models\Categorie;
 use Illuminate\Support\Facades\Auth;
 class ClinicRequest extends Component
 {
@@ -27,12 +28,18 @@ class ClinicRequest extends Component
         return view('livewire.dashboard.clinic-request',[
 
             'cities'=>$this->getCities(),
+            'categories'=>$this->getCategories(),
         ]);
     }
 public function getCities(){
 
 
     return Citie::all();
+}
+public function getCategories(){
+
+
+    return Categorie::all();
 }
 
 

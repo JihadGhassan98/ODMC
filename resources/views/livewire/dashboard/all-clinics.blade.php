@@ -18,7 +18,7 @@
          <span class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')? 'الإسم:':'Name:'}}</span>{{App::isLocale('ar')? $clinic->name_ar:$clinic->name_en}}</span>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')? 'تاريخ الطلب:':'Request Date:'}}</span>{{$clinic->created_at}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'المدينة:':'City:'}}</span>{{App::isLocale('ar')?$clinic->city_ar:$clinic->city_en}}</div>
-         <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'الإختصاص:':'Speciality:'}}</span>{{App::isLocale('ar')?$clinic->categ_ar:$clinic->categ_en}}</div>
+         <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'الفئة:':'Category:'}}</span>{{App::isLocale('ar')?$clinic->categ_ar:$clinic->categ_en}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'المالك:':'Owner:'}}</span>{{$clinic->name}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'العنوان:':'Address:'}}</span>{{$clinic->address}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'البريد الالكتروني:':'Email Address:'}}</span>{{$clinic->email}}</div>
@@ -42,7 +42,9 @@
       <div class="clinic-container__clinics--clinic">
          <img src="/userImages/{{$clinic->image}}" alt="" class="clinic-image">
          <span class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')? 'الإسم:':'Name:'}}</span>{{App::isLocale('ar')? $clinic->name_ar:$clinic->name_en}}</span>
-         <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')? 'تاريخ الطلب:':'Request Date:'}}</span>{{$clinic->created_at}}</div>
+         <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')? 'تاريخ التسجيل:':'Registration Date:'}}</span>{{$clinic->registration_date}}</div>
+         <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')? 'تاريخ الإنتهاء:':'Expiration Date:'}}</span>{{$clinic->expiration_date}}</div>
+         <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'الفئة:':'Category:'}}</span>{{App::isLocale('ar')?$clinic->categ_ar:$clinic->categ_en}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'المدينة:':'City:'}}</span>{{App::isLocale('ar')?$clinic->city_ar:$clinic->city_en}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'المالك:':'Owner:'}}</span>{{$clinic->name}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'العنوان:':'Address:'}}</span>{{$clinic->address}}</div>
@@ -65,7 +67,9 @@
       <div class="clinic-container__clinics--clinic">
          <img src="/userImages/{{$clinic->image}}" alt="" class="clinic-image">
          <span class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')? 'الإسم:':'Name:'}}</span>{{App::isLocale('ar')? $clinic->name_ar:$clinic->name_en}}</span>
-         <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')? 'تاريخ الطلب:':'Request Date:'}}</span>{{$clinic->created_at}}</div>
+         <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')? 'تاريخ التسجيل:':'Registration Date:'}}</span>{{$clinic->registration_date}}</div>
+         <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')? 'تاريخ الإنتهاء:':'Expiration Date:'}}</span>{{$clinic->expiration_date}}</div>
+         <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'الفئة:':'Category:'}}</span>{{App::isLocale('ar')?$clinic->categ_ar:$clinic->categ_en}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'المدينة:':'City:'}}</span>{{App::isLocale('ar')?$clinic->city_ar:$clinic->city_en}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'المالك:':'Owner:'}}</span>{{$clinic->name}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'العنوان:':'Address:'}}</span>{{$clinic->address}}</div>
@@ -93,13 +97,14 @@
          <span class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')? 'الإسم:':'Name:'}}</span>{{App::isLocale('ar')? $clinic->name_ar:$clinic->name_en}}</span>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')? 'تاريخ التسجيل:':'Registration Date:'}}</span>{{$clinic->registration_date}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')? 'تاريخ الإنتهاء:':'Expiration Date:'}}</span>{{$clinic->expiration_date}}</div>
+         <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'الفئة:':'Category:'}}</span>{{App::isLocale('ar')?$clinic->categ_ar:$clinic->categ_en}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'المدينة:':'City:'}}</span>{{App::isLocale('ar')?$clinic->city_ar:$clinic->city_en}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'المالك:':'Owner:'}}</span>{{$clinic->name}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'العنوان:':'Address:'}}</span>{{$clinic->address}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'البريد الالكتروني:':'Email Address:'}}</span>{{$clinic->email}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'رقم الهاتف:':'Phone Number:'}}</span>{{$clinic->phone}}</div>
          <div class="clinic-ops">
-            <button class="clinic-op refresh reject" wire:click="acceptClinic({{$clinic->id}})">{{App::isLocale('ar')? 'إلغاء التفعيل':'Deactivate'}}</button>
+            <button class="clinic-op refresh reject" wire:click="deactivateClinic({{$clinic->id}})">{{App::isLocale('ar')? 'إلغاء التفعيل':'Deactivate'}}</button>
           
             
          </div>
