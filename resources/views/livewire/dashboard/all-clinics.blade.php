@@ -91,7 +91,8 @@
       <div class="clinic-container__clinics--clinic">
          <img src="/userImages/{{$clinic->image}}" alt="" class="clinic-image">
          <span class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')? 'الإسم:':'Name:'}}</span>{{App::isLocale('ar')? $clinic->name_ar:$clinic->name_en}}</span>
-         <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')? 'تاريخ الطلب:':'Request Date:'}}</span>{{$clinic->created_at}}</div>
+         <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')? 'تاريخ التسجيل:':'Registration Date:'}}</span>{{$clinic->registration_date}}</div>
+         <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')? 'تاريخ الإنتهاء:':'Expiration Date:'}}</span>{{$clinic->expiration_date}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'المدينة:':'City:'}}</span>{{App::isLocale('ar')?$clinic->city_ar:$clinic->city_en}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'المالك:':'Owner:'}}</span>{{$clinic->name}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'العنوان:':'Address:'}}</span>{{$clinic->address}}</div>

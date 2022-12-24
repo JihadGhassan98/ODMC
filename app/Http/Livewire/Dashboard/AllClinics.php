@@ -196,6 +196,12 @@ class AllClinics extends Component
         }
     }
 
+    public function rejectClinic($id)
+    {
+        $clinic = Clinic::find($id);
+        
+
+    }
     public function acceptClinic($id)
     {
 
@@ -207,6 +213,18 @@ class AllClinics extends Component
         $date = date_create($registration);
         date_format($date, "Y-m-d");
         $expiration = date_add($date, date_interval_create_from_date_string("30 days"));
+
+        $clinic = Clinic::find($id);
+
+        $clinic->update([
+         'registration_date'=>$registration,
+         'expiration_date'=>$expiration,
+         'active'=>1
+
+
+        ]);
+        $clinic->save();
+
         
 
     }
