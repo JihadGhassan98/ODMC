@@ -1,0 +1,181 @@
+.my-clinic {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.my-clinic__heading {
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.my-clinic__heading--image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border: 3px solid #662D91;
+  box-shadow: 0px 4px 5px 0px rgba(125, 125, 125, 0.5098039216);
+}
+.my-clinic__heading--name {
+  font-size: 30px;
+  text-transform: capitalize;
+  font-weight: bold;
+  cursor: pointer;
+}
+.my-clinic__heading--data {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 5% auto;
+}
+.my-clinic__heading .clinic-box {
+  cursor: pointer;
+  width: 48%;
+  display: flex;
+  flex-direction: row;
+  border: 2px solid #658A2E;
+  position: relative;
+}
+.my-clinic__heading .clinic-label {
+  background-color: #f8efff;
+  text-align: center;
+  width: 40%;
+  font-weight: bold;
+}
+.my-clinic__heading .clinic-field {
+  width: 60%;
+  padding: 0 10px;
+  font-weight: 600;
+}
+.my-clinic__heading .clinic-cta {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.my-clinic__heading .expired {
+  background-color: red;
+  color: #fff;
+}
+.my-clinic__heading .not-expired {
+  background-color: green;
+  color: #fff;
+}
+.my-clinic__section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.my-clinic__section--head-text {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+}
+.my-clinic__section--services {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+}
+.my-clinic__section .service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin: 10px;
+  align-items: center;
+}
+.my-clinic__section .expired {
+  background-color: red;
+  color: #fff;
+}
+.my-clinic__section .not-expired {
+  background-color: green;
+  color: #fff;
+}
+.my-clinic__section .service-name {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  width: 100%;
+  background-color: #662D91;
+  color: #fff;
+}
+.my-clinic__section .service-data {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  padding: 10px;
+  width: 100%;
+  background-color: #fff;
+}
+.my-clinic__section .service-cta {
+  width: 100%;
+  margin: auto;
+  font-size: 30px;
+}
+.my-clinic__section .no-services {
+  width: 70%;
+  text-align: center;
+  font-size: 30px;
+  margin: 2% auto;
+  background-color: #fff;
+}
+.my-clinic__section .add-service {
+  width: -moz-max-content;
+  width: max-content;
+  padding: 10px;
+  border-radius: 10px;
+  margin: auto;
+  background-color: #662D91;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+.my-clinic__section--doctors {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.my-clinic__section .doctors-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.my-clinic__section .doctors-head-cell {
+  background-color: #662D91;
+  border: 1px solid #fff;
+  color: #fff;
+  width: 20%;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .my-clinic__heading .clinic-box {
+    width: 100%;
+  }
+  .my-clinic__section .service-card {
+    width: 100%;
+  }
+}

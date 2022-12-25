@@ -207,6 +207,14 @@
   padding: 10px;
   font-weight: 600;
 }
+.universal-popup__dialog-box .dialog-box-label {
+  font-weight: bold;
+  font-size: 20px;
+}
+.universal-popup__dialog-box .dialog-box-input {
+  width: 100%;
+  font-size: 20px;
+}
 .universal-popup__dialog-box .dialog-list {
   list-style-type: disc;
   list-style-position: inside;
@@ -232,4 +240,19 @@
   color: #fff;
   padding: 10px;
   font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .all-volunteers__requests .user-item {
+    width: 100%;
+  }
+  .all-volunteers__requests .search-bar {
+    width: 100%;
+  }
+  .all-volunteers__requests--request {
+    width: 100%;
+  }
+  .universal-popup__dialog-box {
+    width: 90%;
+  }
 }

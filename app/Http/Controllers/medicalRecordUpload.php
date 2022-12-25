@@ -24,4 +24,9 @@ class medicalRecordUpload extends Controller
            $file->move('medicalReports/',$imageName);
             return back();
     }
+
+    public function storeDoctor(Request $request,$id){
+        //
+    }
+
 }

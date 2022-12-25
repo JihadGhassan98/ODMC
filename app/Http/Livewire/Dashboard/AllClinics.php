@@ -73,7 +73,7 @@ class AllClinics extends Component
 
     public function getExpiredClinics()
     {
-
+       $this->checkExpiredClinics();
         if ($this->searchKey) {
             return Clinic::join('cities', 'clinics.city_id', 'cities.id')
                 ->join('users', 'clinics.user_id', 'users.id')
@@ -129,6 +129,7 @@ class AllClinics extends Component
                         ->orWhere('clinics.phone', 'like', '%' . $this->searchKey . '%');
                 })
                 ->where('clinics.active', 0)
+                ->where('clinics.expired', 0)
                 ->select([
                     'cities.name_ar as city_ar',
                     'cities.name_en as city_en',
@@ -144,7 +145,7 @@ class AllClinics extends Component
             return Clinic::join('cities', 'clinics.city_id', 'cities.id')
                 ->join('users', 'clinics.user_id', 'users.id')
                 ->join('categories', 'clinics.category_id', 'categories.id')
-                ->where('clinics.active', 0)->select([
+                ->where('clinics.active', 0)->where('clinics.expired', 0)->select([
                     'cities.name_ar as city_ar',
                     'cities.name_en as city_en',
                     'clinics.*',
@@ -171,6 +172,7 @@ class AllClinics extends Component
                         ->orWhere('clinics.phone', 'like', '%' . $this->searchKey . '%');
                 })
                 ->where('clinics.active', 1)
+                ->where('clinics.expired', 0)
                 ->select([
                     'cities.name_ar as city_ar',
                     'cities.name_en as city_en',
@@ -239,6 +241,36 @@ class AllClinics extends Component
         
 
     }
+    public function refreshClinic($id)
+    {
+
+
+  
+        $year = date('Y');
+        $day = date('d');
+        $month = date('m');
+        $registration = $year . '-' . $month . '-' . $day;
+        $date = date_create($registration);
+        date_format($date, "Y-m-d");
+        $expiration = date_add($date, date_interval_create_from_date_string("30 days"));
+
+        $clinic = Clinic::find($id);
+
+        $clinic->update([
+         'registration_date'=>$registration,
+         'expiration_date'=>$expiration,
+         'active'=>1,
+         'expired'=>0
+
+
+        ]);
+        $clinic->save();
+     
+
+
+        
+
+    }
 
 
 
@@ -260,5 +292,40 @@ class AllClinics extends Component
         'active'=>0,
         ]);
         $clinic->save();
+    }
+
+    public function checkExpiredClinics(){
+
+        $clinics = Clinic::all();
+        
+        $year = date('Y');
+        $day = date('d');
+        $month = date('m');
+        $currentDate = $year . '-' . $month . '-' . $day;
+        
+   
+
+
+
+        foreach ($clinics as $clinic) {
+           
+            if($clinic->expiration_date == $currentDate){
+
+    
+
+                $clinic->update([
+                 
+                    'expired'=>1,
+                    'active'=>0
+
+                ]);
+                $clinic->save();
+
+            }
+            else{
+              continue;
+            }
+        }
+
     }
 }

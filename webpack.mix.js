@@ -12,7 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
+   .postCss('resources/css/app.css', 'public/css', [
         //
     ]);
 
@@ -29,6 +29,7 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/Sass/allClinics.scss','public/css')
     .sass('resources/Sass/volunteerDashboard.scss','public/css')
     .sass('resources/Sass/clinicRequest.scss','public/css')
+    .sass('resources/Sass/myClinic.scss','public/css')
     .sass('resources/Sass/userAppointments.scss','public/css');
 
 

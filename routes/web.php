@@ -62,7 +62,7 @@ Route::middleware([
 
         return view('allUsers');
     });
-    Route::post('/uploadClinicLogo','App\Http\Controllers\ImageUploader@saveClinicLogo');
+  
     Route::get('allClinics', function () {
         return view('allClinics');
     });
@@ -73,5 +73,10 @@ Route::get('/clinicRequest',function (){
     Route::get('volunteer', function () {
 
         return view('volunteerDashboard');
+    });
+    Route::post('saveDoctorInfo/{clinic_id}', 'App\Http\Controllers\medicalRecordUpload@storeMedicalFile');
+    Route::post('/uploadClinicLogo/{clinic_id}','App\Http\Controllers\ImageUploader@saveClinicLogo');
+    Route::get('/myClinic',function(){
+     return view('myClinic');
     });
 });

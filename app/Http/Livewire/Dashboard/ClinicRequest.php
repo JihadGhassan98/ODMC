@@ -6,10 +6,12 @@ use Livewire\Component;
 use App\Models\Citie;
 use App\Models\Clinic;
 use App\Models\Categorie;
+use App\Models\Doctor;
 use Illuminate\Support\Facades\Auth;
 class ClinicRequest extends Component
 {
-
+    public $daysOfTheWeek =['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    public $daysOfTheWeek_ar =['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت','الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
     public function applied(){
 
     $clinics = Clinic::where('user_id',Auth::user()->id)->get();

@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="/css/allUsers.css">
     <link rel="stylesheet" href="/css/allClinics.css">
     <link rel="stylesheet" href="/css/clinicRequest.css">
+    <link rel="stylesheet" href="/css/myClinic.css">
     <link rel="stylesheet" href="/css/volunteerDashboard.css">
     <link rel="stylesheet" href="/css/app.css">
     <script defer src="/js/app.js"></script>
@@ -49,10 +50,10 @@
                 <a href="{{url('/')}}" class="db-header-button">{{App::isLocale('ar')? 'الرئيسية':'Home'}}</a>
                 <a href="{{url('/myMedicalRecords')}}"
                     class="db-header-button">{{App::isLocale('ar')? 'بياناتي الطبية':'My Medical Info'}}</a>
-                    @if(Auth::user()->type == 2)
-                <a href="/myClinic" class="db-header-button">{{App::isLocale('ar')? 'عيادتي ':'My Clinic'}}</a>
+                    @if(Auth::user()->type == 3)
+                <a href="/myClinic" class="db-header-button">{{App::isLocale('ar')? $clinic->name_ar:$clinic->name_en}}</a>
                 @else
-                <a href="/clinicRequest" class="db-header-button">{{App::isLocale('ar')? 'عياداتي ':'My Clinics'}}</a>
+                <a href="/clinicRequest" class="db-header-button">{{App::isLocale('ar')? 'تسجيل عيادة ':'Register Clinic'}}</a>
                 @endif
                 <a href="{{url('/user/profile')}}"
                     class="db-header-button">{{App::isLocale('ar')? 'الملف الشخصي ':'Profile'}}</a>

@@ -254,6 +254,18 @@ background-color: #fff;
         font-weight: 600;
         
     }
+    .dialog-box-label{
+
+        font-weight: bold;
+        font-size: 20px;
+        
+    }
+    .dialog-box-input{
+
+        width:100%;
+        font-size: 20px;
+
+    }
     .dialog-list{
 
         list-style-type: disc;
@@ -287,4 +299,27 @@ background-color: #fff;
         
     }
     }
+}
+
+
+@media screen and (max-width:768px) {
+
+    .all-volunteers__requests .user-item{
+
+        width: 100%;
+    }
+    .all-volunteers__requests .search-bar{
+
+        width: 100%;
+    }
+    .all-volunteers__requests--request{
+
+        width: 100%;
+    }
+    .universal-popup__dialog-box{
+
+        width: 90%;
+    }
+
+
 }
