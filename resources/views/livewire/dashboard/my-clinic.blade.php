@@ -101,11 +101,9 @@
                 <span class="doctors-cell">{{$doctor->last_name}}</span>
                 <span class="doctors-cell">{{$doctor->phone}}</span>
                 <span class="doctors-ctas">
-                    <button class="doctors-cta"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                    <button class="doctors-cta"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                    <button wire:click="turnOffDoc({{$doctor->id}})" class="doctors-cta {{$doctor->active? '':'doctors-in-active'}}"><i class="fa fa-power-off" aria-hidden="true"></i></button>
+                    <button  wire:click="showDialog(11,{{$doctor->id}})" onclick="scroll_lock()" class="doctors-cta"><i class="fa fa-edit" aria-hidden="true"></i></button>
                 </span>
-             
-             
             </div>
                 
                 @empty
@@ -150,20 +148,20 @@
             <div dir="{{App::isLocale('ar')? 'rtl':'ltr'}}" class="universal-popup__dialog-box--dialog-body">
                 <label for="" class="dialog-box-label">{{App::isLocale('ar')? 'بداية الأسبوع':'Week Start'}}</label>
                 <select dir="ltr" wire:model="w_d_s" type="text" class="dialog-box-input">
-                    @for($i =0 ;$i < count($daysOfTheWeek) ;$i++)
-                    <option value="$i">{{App::isLocale('ar')? $daysOfTheWeek_ar[$i]:$daysOfTheWeek[$i]}}</option>
+                    @for($i =0 ;$i <= count($daysOfTheWeek)-1 ;$i++)
+                    <option selected value="{{$i}}">{{App::isLocale('ar')? $daysOfTheWeek_ar[$i]:$daysOfTheWeek[$i]}}</option>
                     @endfor
                 </select>
 
                 <label for="" class="dialog-box-label">{{App::isLocale('ar')? 'نهاية الأسبوع':'Week End'}}</label>
                 <select dir="ltr" wire:model="w_d_e" class="dialog-box-input">
-                    @for($i =0 ;$i < count($daysOfTheWeek) ;$i++)
-                    <option value="$i">{{App::isLocale('ar')? $daysOfTheWeek_ar[$i]:$daysOfTheWeek[$i]}}</option>
+                    @for($i =0 ;$i <= count($daysOfTheWeek)-1 ;$i++)
+                    <option selected value="{{$i}}">{{App::isLocale('ar')? $daysOfTheWeek_ar[$i]:$daysOfTheWeek[$i]}}</option>
                     @endfor
                 </select>
             </div>
             <div class="dialog-ctas">
-            <button wire:click="changeDays()" class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
+            <button wire:click="changeDays()" onclick="scroll_unlock()" class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
             <button wire:click="hideDialog()" onclick="scroll_unlock()" class="dialog-btn dialog-cancel">{{App::isLocale('ar')? 'إلغاء':'Cancle'}}</button>
             </div>
              </div>
@@ -181,7 +179,7 @@
                 <input wire:model="w_h_e" type="time" class="dialog-box-input">
             </div>
             <div class="dialog-ctas">
-            <button wire:click="changeHours()" class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
+            <button wire:click="changeHours()" onclick="scroll_unlock()" class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
             <button wire:click="hideDialog()" onclick="scroll_unlock()" class="dialog-btn dialog-cancel">{{App::isLocale('ar')? 'إلغاء':'Cancle'}}</button>
             </div>
              </div>
@@ -197,7 +195,7 @@
                 <input wire:model="email" type="text" class="dialog-box-input">
             </div>
             <div class="dialog-ctas">
-            <button wire:click="changeEmail()" class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
+            <button wire:click="changeEmail()" onclick="scroll_unlock()" class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
             <button wire:click="hideDialog()" onclick="scroll_unlock()" class="dialog-btn dialog-cancel">{{App::isLocale('ar')? 'إلغاء':'Cancle'}}</button>
             </div>
              </div>
@@ -213,7 +211,7 @@
                 <input wire:model="phone" type="text" class="dialog-box-input">
             </div>
             <div class="dialog-ctas">
-            <button wire:click="changePhone()" class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
+            <button wire:click="changePhone()" onclick="scroll_unlock()" class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
             <button wire:click="hideDialog()" onclick="scroll_unlock()" class="dialog-btn dialog-cancel">{{App::isLocale('ar')? 'إلغاء':'Cancle'}}</button>
             </div>
              </div>
@@ -233,7 +231,7 @@
                 </select>
             </div>
             <div class="dialog-ctas">
-            <button wire:click="changeCateg()" class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
+            <button wire:click="changeCateg()" onclick="scroll_unlock()" class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
             <button wire:click="hideDialog()" onclick="scroll_unlock()" class="dialog-btn dialog-cancel">{{App::isLocale('ar')? 'إلغاء':'Cancle'}}</button>
             </div>
              </div>
@@ -253,7 +251,7 @@
                 </select>
             </div>
             <div class="dialog-ctas">
-            <button wire:click="changeCity()" class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
+            <button wire:click="changeCity()" onclick="scroll_unlock()" class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
             <button wire:click="hideDialog()" onclick="scroll_unlock()" class="dialog-btn dialog-cancel">{{App::isLocale('ar')? 'إلغاء':'Cancle'}}</button>
             </div>
              </div>
@@ -276,7 +274,7 @@
               
             </div>
             <div class="dialog-ctas">
-            <button wire:click="createService()" class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
+            <button wire:click="createService()" onclick="scroll_unlock()" class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
             <button wire:click="hideDialog()" onclick="scroll_unlock()" class="dialog-btn dialog-cancel">{{App::isLocale('ar')? 'إلغاء':'Cancle'}}</button>
             </div>
              </div>
@@ -298,7 +296,29 @@
               
             </div>
             <div class="dialog-ctas">
-            <button wire:click="saveDoctor()" class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
+            <button wire:click="saveDoctor()" onclick="scroll_unlock()" class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
+            <button wire:click="hideDialog()" onclick="scroll_unlock()" class="dialog-btn dialog-cancel">{{App::isLocale('ar')? 'إلغاء':'Cancle'}}</button>
+            </div>
+             </div>
+        @break;
+        @case(11)
+        <div class="universal-popup__dialog-box">
+            <div class="universal-popup__dialog-box--dialog-header">
+            <span class="dialog-name">{{App::isLocale('ar')? 'تعديل معلومات العيادة':'Editing Clinic Information'}}</span>
+            <button onclick="scroll_unlock()" wire:click = "hideDialog()" class="dialog-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div dir="{{App::isLocale('ar')? 'rtl':'ltr'}}" class="universal-popup__dialog-box--dialog-body">
+                <label for="" class="dialog-box-label">{{App::isLocale('ar')? 'الإسم الأول':'First Name'}}</label>
+                <input wire:model="d_fname" type="text" class="dialog-box-input">
+                <label for="" class="dialog-box-label">{{App::isLocale('ar')? 'الإسم الأخير':'Last Name'}}</label>
+                <input wire:model="d_lname" type="text" class="dialog-box-input">
+                <label for="" class="dialog-box-label">{{App::isLocale('ar')? 'رقم الهاتف':'Phone Number'}}</label>
+                <input wire:model="d_phone" type="text" class="dialog-box-input">
+          
+              
+            </div>
+            <div class="dialog-ctas">
+            <button wire:click="editDoctor()" onclick="scroll_unlock()" class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
             <button wire:click="hideDialog()" onclick="scroll_unlock()" class="dialog-btn dialog-cancel">{{App::isLocale('ar')? 'إلغاء':'Cancle'}}</button>
             </div>
              </div>

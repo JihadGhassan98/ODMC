@@ -12,6 +12,8 @@ use App\Models\Appointment;
 use App\Models\Blog;
 use App\Models\Categorie;
 use App\Models\Citie;
+use DateTime;
+use Ramsey\Uuid\Type\Time;
 use Session;
 
 
@@ -21,6 +23,9 @@ class MyClinic extends Component
     public $daysOfTheWeek_ar =['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
  public $name_ar;
  public $name_en;
+ public $d_fname;
+ public $d_lname;
+ public $d_phone;
  public $w_d_s;
  public $w_d_e;
  public $w_h_s;
@@ -107,6 +112,7 @@ public function getClinic(){
         if($s != 0){
 
             Session::put('SID',$s);
+            Session::put('DID',$s);
       
 
 
@@ -199,6 +205,41 @@ public function getClinic(){
 
 
     }
+    public function editDoctor(){
+     $doc = Doctor::find(Session::get('DID'));
+     if($this->d_fname != null){
+        $doc->update([
+            'first_name'=>$this->d_fname,
+           
+          
+           ]);
+
+     }
+     if($this->d_lname != null){
+
+        $doc->update([
+          
+         
+            'last_name'=>$this->d_lname,
+          
+           ]);
+     }
+     if($this->d_phone != null){
+        $doc->update([
+        
+            'phone'=>$this->d_phone,
+        
+           ]);
+
+     }
+    
+    
+
+     $this->hideDialog();
+
+
+
+    }
 
 
 
@@ -213,7 +254,29 @@ public function getClinic(){
         $this->hideDialog();
 
     }
-    public function createDoctor(){
+    public function changeHours(){
+        $myClinic =  Clinic::where('user_id',Auth::user()->id)->first();
+        $myClinic->update([
+            // 'week_start'=>$this->w_d_s,
+            // 'week_end'=>$this->w_d_e,
+            'day_start'=>$this->w_h_s,
+            'day_end'=>$this->w_h_e,
+        ]);
+        $this->hideDialog();
+
+    }
+    public function changeDays(){
+        $myClinic =  Clinic::where('user_id',Auth::user()->id)->first();
+        $myClinic->update([
+            'week_start'=>$this->w_d_s,
+            'week_end'=>$this->w_d_e,
+            // 'day_start'=>$this->w_h_s,
+            // 'day_end'=>$this->w_h_e,
+        ]);
+        $this->hideDialog();
+
+    }
+    public function saveDoctor(){
 
         $myClinic =  Clinic::where('user_id',Auth::user()->id)->first();
         Doctor::create([
@@ -225,13 +288,66 @@ public function getClinic(){
         ]);
 
         $doc_count = Doctor::where('clinic_id',$myClinic->id)->count();
-        $hrs_count = $myClinic->d_start->diff($myClinic->d_end);
+       
+        $s = $myClinic->day_start;
+        $e = $myClinic->day_end;
+       
+        $starttimestamp = strtotime($s);
+        $endtimestamp = strtotime($e);
+        $difference = abs($endtimestamp - $starttimestamp)/3600;
+    
         $myClinic->update([
-            'appt_count'=>$doc_count*$hrs_count,
+            'appt_count'=>$doc_count*$difference,
         ]);
         $myClinic->save();
-
+        $this->hideDialog();
+        $this->d_fname=null;
+        $this->d_lname=null;
+        $this->d_phone=null;
     }
-    // public function change(){
-    // }
+    public function changeCateg(){
+        $myClinic =  Clinic::where('user_id',Auth::user()->id)->first();
+        $myClinic->update([
+            'category_id'=>$this->categ,
+        ]);
+        $myClinic->save();
+        $this->hideDialog();
+    }
+    public function changePhone(){
+        $myClinic =  Clinic::where('user_id',Auth::user()->id)->first();
+        $myClinic->update([
+            'phone'=>$this->phone,
+        ]);
+        $myClinic->save();
+        $this->hideDialog();
+    }
+    public function changeEmail(){
+        $myClinic =  Clinic::where('user_id',Auth::user()->id)->first();
+        $myClinic->update([
+            'email'=>$this->email,
+        ]);
+        $myClinic->save();
+        $this->hideDialog();
+    }
+    public function changeCity(){
+        $myClinic =  Clinic::where('user_id',Auth::user()->id)->first();
+        $myClinic->update([
+            'city_id'=>$this->city,
+        ]);
+        $myClinic->save();
+        $this->hideDialog();
+    }
+    public function turnOffDoc($id){
+
+        $doc= Doctor::find($id);
+        if($doc->active == 1){
+        $doc->update([
+            'active'=>0
+        ]);}
+        else{
+        $doc->update([
+            'active'=>1
+        ]);
+    }
+    }
 }

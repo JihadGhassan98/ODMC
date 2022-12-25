@@ -48,18 +48,18 @@
      <div class="clinic-form__field">
         <label for="" class="clinic-form__field--label">{{App::isLocale('ar')? 'بداية الأسبوع':'Week Start'}}</label>
         <select required name="w_start" id="" class="clinic-form__field--input">
-            <option value=""> {{App::isLocale('ar')? '--اختر--':'--Choose--'}}</option>
-            @for($i=0;$i < count($daysOfTheWeek)-1;$i++)
-            <option value="{{$i}}">{{App::isLocale('ar')? $daysOfTheWeek_ar[$i]:$daysOfTheWeek[$i]}}</option>
+            <option selected value=""> {{App::isLocale('ar')? '--اختر--':'--Choose--'}}</option>
+            @for($i=0; $i <= count($daysOfTheWeek)-1;$i++)
+            <option  value="{{$i}}">{{App::isLocale('ar')? $daysOfTheWeek_ar[$i]:$daysOfTheWeek[$i]}}</option>
             @endfor
         </select>
      </div>
      <div class="clinic-form__field">
         <label for="" class="clinic-form__field--label">{{App::isLocale('ar')? 'نهاية الأسبوع':'Week End'}}</label>
         <select required name="w_end" id="" class="clinic-form__field--input">
-            <option value=""> {{App::isLocale('ar')? '--اختر--':'--Choose--'}}</option>
-            @for($i=0;$i < count($daysOfTheWeek)-1;$i++)
-            <option value="{{$i}}">{{App::isLocale('ar')? $daysOfTheWeek_ar[$i]:$daysOfTheWeek[$i]}}</option>
+            <option selected value=""> {{App::isLocale('ar')? '--اختر--':'--Choose--'}}</option>
+            @for($i=0; $i <= count($daysOfTheWeek)-1;$i++)
+            <option selected value="{{$i}}">{{App::isLocale('ar')? $daysOfTheWeek_ar[$i]:$daysOfTheWeek[$i]}}</option>
             @endfor
         </select>
      </div>

@@ -50,7 +50,7 @@
                 <a href="{{url('/')}}" class="db-header-button">{{App::isLocale('ar')? 'الرئيسية':'Home'}}</a>
                 <a href="{{url('/myMedicalRecords')}}"
                     class="db-header-button">{{App::isLocale('ar')? 'بياناتي الطبية':'My Medical Info'}}</a>
-                    @if(Auth::user()->type == 3)
+                    @if(Auth::user()->type == 3 )
                 <a href="/myClinic" class="db-header-button">{{App::isLocale('ar')? $clinic->name_ar:$clinic->name_en}}</a>
                 @else
                 <a href="/clinicRequest" class="db-header-button">{{App::isLocale('ar')? 'تسجيل عيادة ':'Register Clinic'}}</a>
