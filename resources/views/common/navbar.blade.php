@@ -1,7 +1,7 @@
 <nav class="navbar">
 
 <div class="navbar__logo-lang">
-    <img src="systemImages/ODMC.png" alt="" class="navbar__logo-lang--logo">
+    <img src="/systemImages/ODMC.png" alt="" class="navbar__logo-lang--logo">
     @if(App::isLocale('en'))
     <a href="{{url('lang/ar')}}" class="navbar__logo-lang--lang">العربية</a>
 @else

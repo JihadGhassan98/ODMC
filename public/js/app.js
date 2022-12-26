@@ -22299,6 +22299,19 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
+/***/ "./resources/Sass/footer.scss":
+/*!************************************!*\
+  !*** ./resources/Sass/footer.scss ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/Sass/uploadPhoto.scss":
 /*!*****************************************!*\
   !*** ./resources/Sass/uploadPhoto.scss ***!
@@ -22481,10 +22494,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/Sass/navbar.scss":
-/*!************************************!*\
-  !*** ./resources/Sass/navbar.scss ***!
-  \************************************/
+/***/ "./resources/Sass/clinicProfile.scss":
+/*!*******************************************!*\
+  !*** ./resources/Sass/clinicProfile.scss ***!
+  \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -22494,9 +22507,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/Sass/footer.scss":
+/***/ "./resources/Sass/navbar.scss":
 /*!************************************!*\
-  !*** ./resources/Sass/footer.scss ***!
+  !*** ./resources/Sass/navbar.scss ***!
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -22849,8 +22862,8 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 			"/js/app": 0,
 /******/ 			"css/body": 0,
 /******/ 			"css/app": 0,
-/******/ 			"css/footer": 0,
 /******/ 			"css/navbar": 0,
+/******/ 			"css/clinicProfile": 0,
 /******/ 			"css/homePage": 0,
 /******/ 			"css/welcomeUser": 0,
 /******/ 			"css/userAppointments": 0,
@@ -22862,7 +22875,8 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 			"css/allVolunteers": 0,
 /******/ 			"css/medicalRecords": 0,
 /******/ 			"css/volunteerRequest": 0,
-/******/ 			"css/uploadPhoto": 0
+/******/ 			"css/uploadPhoto": 0,
+/******/ 			"css/footer": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -22912,23 +22926,24 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto"], () => (__webpack_require__("./resources/Sass/welcomeUser.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto"], () => (__webpack_require__("./resources/Sass/homePage.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto"], () => (__webpack_require__("./resources/Sass/body.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto"], () => (__webpack_require__("./resources/Sass/navbar.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto"], () => (__webpack_require__("./resources/Sass/footer.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto"], () => (__webpack_require__("./resources/Sass/uploadPhoto.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto"], () => (__webpack_require__("./resources/Sass/volunteerRequest.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto"], () => (__webpack_require__("./resources/Sass/medicalRecords.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto"], () => (__webpack_require__("./resources/Sass/allVolunteers.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto"], () => (__webpack_require__("./resources/Sass/allUsers.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto"], () => (__webpack_require__("./resources/Sass/allClinics.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto"], () => (__webpack_require__("./resources/Sass/volunteerDashboard.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto"], () => (__webpack_require__("./resources/Sass/clinicRequest.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto"], () => (__webpack_require__("./resources/Sass/myClinic.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto"], () => (__webpack_require__("./resources/Sass/userAppointments.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/body","css/app","css/footer","css/navbar","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/navbar","css/clinicProfile","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto","css/footer"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/navbar","css/clinicProfile","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto","css/footer"], () => (__webpack_require__("./resources/Sass/welcomeUser.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/navbar","css/clinicProfile","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto","css/footer"], () => (__webpack_require__("./resources/Sass/homePage.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/navbar","css/clinicProfile","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto","css/footer"], () => (__webpack_require__("./resources/Sass/body.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/navbar","css/clinicProfile","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto","css/footer"], () => (__webpack_require__("./resources/Sass/clinicProfile.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/navbar","css/clinicProfile","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto","css/footer"], () => (__webpack_require__("./resources/Sass/navbar.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/navbar","css/clinicProfile","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto","css/footer"], () => (__webpack_require__("./resources/Sass/footer.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/navbar","css/clinicProfile","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto","css/footer"], () => (__webpack_require__("./resources/Sass/uploadPhoto.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/navbar","css/clinicProfile","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto","css/footer"], () => (__webpack_require__("./resources/Sass/volunteerRequest.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/navbar","css/clinicProfile","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto","css/footer"], () => (__webpack_require__("./resources/Sass/medicalRecords.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/navbar","css/clinicProfile","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto","css/footer"], () => (__webpack_require__("./resources/Sass/allVolunteers.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/navbar","css/clinicProfile","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto","css/footer"], () => (__webpack_require__("./resources/Sass/allUsers.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/navbar","css/clinicProfile","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto","css/footer"], () => (__webpack_require__("./resources/Sass/allClinics.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/navbar","css/clinicProfile","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto","css/footer"], () => (__webpack_require__("./resources/Sass/volunteerDashboard.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/navbar","css/clinicProfile","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto","css/footer"], () => (__webpack_require__("./resources/Sass/clinicRequest.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/navbar","css/clinicProfile","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto","css/footer"], () => (__webpack_require__("./resources/Sass/myClinic.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/body","css/app","css/navbar","css/clinicProfile","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto","css/footer"], () => (__webpack_require__("./resources/Sass/userAppointments.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/body","css/app","css/navbar","css/clinicProfile","css/homePage","css/welcomeUser","css/userAppointments","css/myClinic","css/clinicRequest","css/volunteerDashboard","css/allClinics","css/allUsers","css/allVolunteers","css/medicalRecords","css/volunteerRequest","css/uploadPhoto","css/footer"], () => (__webpack_require__("./resources/css/app.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

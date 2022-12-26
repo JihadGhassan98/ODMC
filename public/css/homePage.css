@@ -48,9 +48,211 @@
   border-radius: 0px;
   transition: all 0.4s ease-in-out;
 }
+.home-page__clinics {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.home-page__clinics--title {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+  background-color: #efd9ff;
+  color: #000;
+  font-weight: bold;
+}
+.home-page__clinics--clinic-search {
+  width: 100%;
+  margin: 3% auto;
+  display: flex;
+  gap: 20px;
+}
+.home-page__clinics .clinic-search-field {
+  padding: 10px;
+  width: 40%;
+  border: 2px solid #662D91;
+  font-size: 20px;
+}
+.home-page__clinics .clinic-search-drop {
+  padding: 10px;
+  width: 20%;
+  background-color: #f5e9ff;
+  font-size: 16px;
+}
+.home-page__clinics--clinic-items {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+}
+.home-page__clinics .clinic-item {
+  width: 24%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  align-items: center;
+  border: 2px solid #658A2E;
+  background-color: #fff;
+  box-shadow: 0px 5px 7px 1px #b3b2b2;
+}
+.home-page__clinics .c-img {
+  width: 140px;
+}
+.home-page__clinics .c-data {
+  font-weight: bold;
+  font-size: 22px;
+}
+.home-page__clinics .c-dates {
+  font-size: 18px;
+  font-weight: 600;
+}
+.home-page__clinics .c-link {
+  background-color: #662D91;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 10px;
+}
+.home-page__clinics .c-cta {
+  background-color: #662D91;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+.home-page__clinics .offer-banner {
+  background-color: #658A2E;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
+.home-page__clinics .normal-price {
+  background-color: #e3caf8;
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
+.home-page .clinic-not-found {
+  font-size: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.universal-popup {
+  width: 100%;
+  position: fixed;
+  overflow-y: hidden;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7411764706);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 30000;
+}
+.universal-popup__dialog-box {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.universal-popup__dialog-box--dialog-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #662D91;
+}
+.universal-popup__dialog-box--dialog-body {
+  background-color: #fff;
+  padding: 10px;
+}
+.universal-popup__dialog-box .dialog-name {
+  width: 95%;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
+.universal-popup__dialog-box .dialog-close {
+  background-color: red;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border: none;
+}
+.universal-popup__dialog-box .dialog-text {
+  padding: 10px;
+  font-weight: 600;
+}
+.universal-popup__dialog-box .dialog-box-label {
+  font-weight: bold;
+  font-size: 20px;
+}
+.universal-popup__dialog-box .dialog-box-input {
+  width: 100%;
+  font-size: 20px;
+}
+.universal-popup__dialog-box .dialog-list {
+  list-style-type: disc;
+  list-style-position: inside;
+  font-size: 700;
+}
+.universal-popup__dialog-box .dialog-ctas {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+.universal-popup__dialog-box .dialog-confirm {
+  background-color: green;
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+}
+.universal-popup__dialog-box .dialog-cancel {
+  background-color: red;
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+}
 
 @media screen and (max-width: 768px) {
   .home-page__hero .slug-text {
     font-size: 30px;
+  }
+  .home-page__clinics .clinic-item {
+    width: 100%;
+  }
+  .home-page__clinics--clinic-search {
+    flex-direction: column;
+  }
+  .home-page__clinics .clinic-search-field {
+    width: 80%;
+    margin: auto;
+  }
+  .home-page__clinics .clinic-search-drop {
+    width: 80%;
+    margin: auto;
+  }
+  .universal-popup__dialog-box {
+    width: 90%;
   }
 }

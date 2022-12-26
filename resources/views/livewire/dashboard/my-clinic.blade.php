@@ -279,6 +279,29 @@
             </div>
              </div>
         @break;
+        @case(9)
+        <div class="universal-popup__dialog-box">
+            <div class="universal-popup__dialog-box--dialog-header">
+            <span class="dialog-name">{{App::isLocale('ar')? 'تعديل معلومات العيادة':'Editing Clinic Information'}}</span>
+            <button onclick="scroll_unlock()" wire:click = "hideDialog()" class="dialog-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div dir="{{App::isLocale('ar')? 'rtl':'ltr'}}" class="universal-popup__dialog-box--dialog-body">
+                <label for="" class="dialog-box-label">{{App::isLocale('ar')? 'اسم الخدمة بالعربية':'Service Name In Arabic'}}</label>
+                <input wire:model="s_ar" type="text" class="dialog-box-input">
+                <label for="" class="dialog-box-label">{{App::isLocale('ar')? 'اسم الخدمة بالإنجليزية':'Service Name In English'}}</label>
+                <input wire:model="s_en" type="text" class="dialog-box-input">
+                <label for="" class="dialog-box-label">{{App::isLocale('ar')? 'السعر':'Price'}}</label>
+                <input wire:model="price" type="text" class="dialog-box-input">
+                <label for="" class="dialog-box-label">{{App::isLocale('ar')? 'الخصم':'Discount'}}</label>
+                <input wire:model="discount" type="text" class="dialog-box-input">
+              
+            </div>
+            <div class="dialog-ctas">
+            <button wire:click="editService()" onclick="scroll_unlock()" class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
+            <button wire:click="hideDialog()" onclick="scroll_unlock()" class="dialog-btn dialog-cancel">{{App::isLocale('ar')? 'إلغاء':'Cancle'}}</button>
+            </div>
+             </div>
+        @break;
         @case(10)
         <div class="universal-popup__dialog-box">
             <div class="universal-popup__dialog-box--dialog-header">
