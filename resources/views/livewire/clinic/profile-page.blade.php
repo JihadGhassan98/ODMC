@@ -113,7 +113,7 @@
                 @elseif($wrongHour)
                 <span class='booking-error'>{{App::isLocale('ar')? 'يرجى اختيار وقت ضمن ساعات دوام العيادة':'Please Consider The Working Hours'}} <button wire:click="refreshDialog()" class="refresh-dialog"><i class="fa fa-refresh" aria-hidden="true"></i></button></span>
                 @else
-            <button wire:click="Book()"  class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
+            <button wire:click="Book()"  onclick="scroll_unlock()" class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
             @endif
             <button wire:click="hideDialog()" onclick="scroll_unlock()" class="dialog-btn dialog-cancel">{{App::isLocale('ar')? 'إلغاء':'Cancle'}}</button>
             </div>

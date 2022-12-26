@@ -7,11 +7,24 @@ use App\Models\Clinic;
 use Livewire\WithPagination;
 use App\Models\Categorie;
 use App\Models\Citie;
+use DateTime;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Appointment;
 use App\Models\Service;
 
 class HomePage extends Component
 {
     use WithPagination;
+    public $tooMany = 0;
+    public $wrongDay = 0;
+    public $wrongHour = 0;
+    public $showDialog = 0;
+    public $serviceID;
+    public $date;
+    public $city;
+    public $time;
+    public $note;
+    public $pickupAddress;
     public $searchKey;
     public $city_sort=0;
     public $categ_sort=0;
@@ -289,4 +302,105 @@ $this->s_city_sort=0;;
         }
 
     }
+    public function refreshDialog(){
+
+        $this->tooMany = 0;
+        $this->wrongDay = 0;
+        $this->wrongHour = 0;
+        $this->showDialog = 0;
+        $this->serviceID= null;
+   }
+
+
+   public function showDialog($id){
+    $this->showDialog=1;
+    $this->serviceID = $id;
+}
+public function hideDialog(){
+    $this->showDialog=0;
+    $this->serviceID = null;
+}
+public function Book(){
+ 
+    if(!Auth::check()){
+
+      redirect()->to('/register');
+
+    }
+    $date1 = new DateTime($this->date);
+$date2 = new DateTime(date('Y-m-d') );
+
+$days = $date2->diff($date1)->format('%r%d');
+
+if($days === "-1"){
+    // if($this->date == date('Y-m-d')){
+
+        $this->wrongDay=1;
+
+
+    }
+
+
+    $service = Service::find($this->serviceID);
+    $appointments = Appointment::where('clinic_id',$service->clinic_id)->count();
+    $clinic = Clinic::find($service->clinic_id);
+    $appt_count = $clinic->appt_count;
+    $w_d_s = $clinic->week_start; 
+    $w_d_e = $clinic->week_end;
+    $w_h_s= $clinic->day_start; 
+    $w_h_e=$clinic->day_end;
+    
+   $day = date('l', strtotime($this->date));
+   
+   if(array_search($day,$this->daysOfTheWeek)){
+    $index = array_search($day,$this->daysOfTheWeek);
+    
+    if($index >= $w_d_s && $index <= $w_d_e ){
+     
+ 
+
+            if($appointments == $clinic->appt_count){
+
+                $this->tooMany=1;
+            }
+            else{
+             Appointment::create([
+             'user_id'=>Auth::user()->id,
+             'city_id'=>$this->city,
+             'clinic_id'=>$clinic->id,
+             'date'=>$this->date,
+             'time'=>$this->time,
+             'pickup_address'=>$this->pickupAddress,
+             'note'=>$this->note,
+             'status_id'=>3,
+             'service_id'=>$this->serviceID,
+
+             ]);
+             $this->hideDialog();
+            }
+
+     
+
+
+
+
+
+    }
+    else {
+
+     $this->wrongDay =1 ;
+
+     return;
+
+    }
+
+   }
+
+
+
+
+
+}
+
+
 }

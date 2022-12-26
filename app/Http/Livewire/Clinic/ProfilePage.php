@@ -7,8 +7,10 @@ use App\Models\Service;
 use App\Models\Appointment;
 use App\Models\Citie;
 use App\Models\Clinic;
+use DateTime;
 use Session;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Date;
 
 use function PHPUnit\Framework\containsIdentical;
 
@@ -76,10 +78,21 @@ public function refreshDialog(){
  
         if(!Auth::check()){
 
-          redirect()->to('/login');
+          redirect()->to('/register');
 
         }
+        $date1 = new DateTime($this->date);
+    $date2 = new DateTime(date('Y-m-d') );
+    
+    $days = $date2->diff($date1)->format('%r%d');
+    
+    if($days === "-1"){
+        // if($this->date == date('Y-m-d')){
 
+            $this->wrongDay=1;
+
+
+        }
 
 
         $service = Service::find($this->serviceID);
@@ -98,11 +111,7 @@ public function refreshDialog(){
         
         if($index >= $w_d_s && $index <= $w_d_e ){
          
-            $utime1 = strtotime($this->time);
-            $utimeS = strtotime($w_h_s);
-            $utimeE = strtotime($w_h_e);
-            
-            if($utime1 >= $utimeS && $utime1 <= $utimeE ){
+          
 
                 if($appointments == $clinic->appt_count){
 
@@ -124,12 +133,7 @@ public function refreshDialog(){
                  $this->hideDialog();
                 }
 
-            }
-            else{
-
-                $this->wrongHour =1;
-              
-            }
+          
 
 
 
