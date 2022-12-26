@@ -36,7 +36,13 @@ class ProfilePage extends Component
         ]);
        
     }
+public function refreshDialog(){
 
+     $this->tooMany = 0;
+     $this->wrongDay = 0;
+     $this->wrongHour = 0;
+     $this->showDialog = 0;
+}
     public function myClinic(){
 
 
