@@ -63,7 +63,7 @@
      </div>
 <div class="home-page__clinics--clinic-items">
    @forelse($offers as $clinic)
-   <div wire:click="Book()" class="clinic-item">
+   <div class="clinic-item">
     <img  class="c-img"src="/userImages/{{$clinic->logo}}" alt="">
    <span class="c-data"> {{App::isLocale('ar')? $clinic->name_ar:$clinic->name_en}}</span>
    <span class="c-data"> {{App::isLocale('ar')? $clinic->city_ar:$clinic->city_en}}</span>

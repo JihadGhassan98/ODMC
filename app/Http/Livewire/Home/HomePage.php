@@ -66,6 +66,7 @@ $this->s_city_sort=0;;
             ->select([
                 'cities.name_ar as city_ar',
                 'cities.name_en as city_en',
+                'cities.id as CID',
                 'clinics.name_ar as clinic_ar',
                 'clinics.name_en as clinic_en',
                 'clinics.image as logo',
