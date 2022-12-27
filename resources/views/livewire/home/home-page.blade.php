@@ -9,7 +9,7 @@
         </div>
     </header>
 
-    <section class="home-page__clinics">
+    <section id="clinics" class="home-page__clinics">
      <span class="home-page__clinics--title">{{App::isLocale('ar')? 'العيادات ':'Clinics'}}</span>
      <div class="home-page__clinics--clinic-search">
         <input type="text" wire:model="searchKey" placeholder="{{App::isLocale('ar')? 'البحث عن عيادة':'Search for a clinic'}}" class="clinic-search-field">
@@ -44,7 +44,7 @@
 <div class="">{{$clinics->links()}}</div>
 
     </section>
-    <section class="home-page__clinics">
+    <section id="offers" class="home-page__clinics">
      <span class="home-page__clinics--title">{{App::isLocale('ar')? 'العروض ':'Offers'}}</span>
      <div class="home-page__clinics--clinic-search">
         <input type="text" wire:model="s_searchKey" placeholder="{{App::isLocale('ar')? 'البحث عن خدمة':'Search for a service'}}" class="clinic-search-field">

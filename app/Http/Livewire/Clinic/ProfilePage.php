@@ -96,7 +96,7 @@ public function refreshDialog(){
 
 
         $service = Service::find($this->serviceID);
-        $appointments = Appointment::where('clinic_id',$service->clinic_id)->count();
+        $appointments = Appointment::where('clinic_id',$service->clinic_id)->where('status_id',3)->count();
         $clinic = Clinic::find($service->clinic_id);
         $appt_count = $clinic->appt_count;
         $w_d_s = $clinic->week_start; 

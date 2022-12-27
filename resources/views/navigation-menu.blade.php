@@ -18,7 +18,7 @@
                     <x-jet-nav-link href="{{ route('appointments') }}" :active="request()->routeIs('appointments')">
                         {{ App::isLocale('ar')? 'مواعيدي':'My Appointments' }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('findVolunteer')">
+                    <x-jet-nav-link href="{{ url('/findVolunteer') }}" :active="request()->routeIs('findVolunteer')">
                         {{ App::isLocale('ar')? 'البحث عن متطوع':'Find A Companion' }}
                     </x-jet-nav-link>
                     @if(Auth::user()->type == 2)

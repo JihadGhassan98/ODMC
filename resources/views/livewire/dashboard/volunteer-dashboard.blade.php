@@ -27,6 +27,20 @@
 </div> 
 </div>
 
+<div class="db-body" dir="{{App::isLocale('ar')?  'rtl':'ltr'}}">
+    <span class="db-body__saperator">{{App::isLocale('ar')? 'طلبات التطوع':'Volunteer Requests'}}</span>
 
-    </main>
+    <div class="users_need_help">
+      <div class="user_list">
+       <div class="user_data">
+       </div>
+      </div>
+    </div>
+
+</div>
+
+
+
+
+</main>
 </div>

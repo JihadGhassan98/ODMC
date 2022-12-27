@@ -1,0 +1,113 @@
+.my-appointments{
+
+width: 100%;
+display: flex;
+flex-direction: column;
+gap: 10px;
+
+&__status-ctas{
+
+    width:40%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    &--status-cta{
+
+        background-color: green;
+        color: #ffff;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    &--cta-text{
+
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+&__appointments{
+
+    width:80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+&--appointment{
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #662D91;
+    padding: 10px;
+}
+.appt-data{
+
+    width: 48%;
+    background-color: #fff;
+    text-align: center;
+    font-size: 20px;
+}
+}
+}
+.no-appt{
+
+    width: 100%;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+
+
+}
+.find-volunteer{
+
+    width: 60%;
+    margin: 3% auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    &__head{
+
+        text-align: center;
+        font-weight: bold;
+        font-size: 30px;
+    }
+    &__cta{
+
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        width: 40%;
+        margin: auto;
+    }
+    &__status{
+
+        width: 70%;
+        margin: auto;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .no-vol{
+
+        background-color: red;
+        color: #fff;
+    }
+    .yes-vol{
+
+        background-color: green;
+        color: #fff;
+    }
+}
+@media screen and (max-width:768px) {
+
+    .my-appointments__appointments .appt-data{
+
+        width: 100%;
+    }
+    
+}

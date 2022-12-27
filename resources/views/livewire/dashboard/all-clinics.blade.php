@@ -23,6 +23,8 @@
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'العنوان:':'Address:'}}</span>{{$clinic->address}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'البريد الالكتروني:':'Email Address:'}}</span>{{$clinic->email}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'رقم الهاتف:':'Phone Number:'}}</span>{{$clinic->phone}}</div>
+         <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'عرض التقرير':'Show Report'}}</span><a href="{{url('/clinicReport/'.$clinic->id)}}">GO</a></div>
+
          <div class="clinic-ops">
             <button class="clinic-op accept" wire:click="acceptClinic({{$clinic->id}})">{{App::isLocale('ar')? 'قبول':'Accept'}}</button>
             <button class="clinic-op reject" wire:click="rejectClinic({{$clinic->id}})">{{App::isLocale('ar')? 'رفض':'Reject'}}</button>
@@ -50,6 +52,8 @@
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'العنوان:':'Address:'}}</span>{{$clinic->address}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'البريد الالكتروني:':'Email Address:'}}</span>{{$clinic->email}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'رقم الهاتف:':'Phone Number:'}}</span>{{$clinic->phone}}</div>
+         <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'عرض التقرير':'Show Report'}}</span><a href="{{url('/clinicReport/'.$clinic->id)}}">GO</a></div>
+
          <div class="clinic-ops">
             <button class="clinic-op refresh" wire:click="refreshClinic({{$clinic->id}})">{{App::isLocale('ar')? 'تجديد الإشتراك':'Re-new Subscription'}}</button>
          </div>
@@ -75,6 +79,8 @@
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'العنوان:':'Address:'}}</span>{{$clinic->address}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'البريد الالكتروني:':'Email Address:'}}</span>{{$clinic->email}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'رقم الهاتف:':'Phone Number:'}}</span>{{$clinic->phone}}</div>
+         <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'عرض التقرير':'Show Report'}}</span><a href="{{url('/clinicReport/'.$clinic->id)}}">GO</a></div>
+
          <div class="clinic-ops">
             <button class="clinic-op refresh accept" wire:click="activateClinic({{$clinic->id}})">{{App::isLocale('ar')? 'تفعيل':'Activate'}}</button>
           
@@ -103,6 +109,8 @@
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'العنوان:':'Address:'}}</span>{{$clinic->address}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'البريد الالكتروني:':'Email Address:'}}</span>{{$clinic->email}}</div>
          <div class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'رقم الهاتف:':'Phone Number:'}}</span>{{$clinic->phone}}</div>
+         <a href="{{url('/clinicReport/'.$clinic->id)}}" class="clinic-data"><span class="clinic-data-holder">{{App::isLocale('ar')?'عرض التقرير':'Show Report'}}</span></a>
+
          <div class="clinic-ops">
             <button class="clinic-op refresh reject" wire:click="deactivateClinic({{$clinic->id}})">{{App::isLocale('ar')? 'إلغاء التفعيل':'Deactivate'}}</button>
           

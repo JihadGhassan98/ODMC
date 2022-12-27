@@ -52,6 +52,12 @@ Route::middleware([
         return view('volunteerRequest');
     });
 
+    Route::get('/findVolunteer',function(){
+
+return view('findVolunteer');
+
+    });
+
     Route::get('allVolunteers', function () {
 
 
@@ -79,6 +85,12 @@ Route::get('/clinicRequest',function (){
     Route::get('/myClinic',function(){
      return view('myClinic');
     });
+
+    Route::get('/clinicReport/{clinic_id}',function($clinic_id){
+        Session::put('CID',$clinic_id);
+    return view('singleClinicReport');
+});
+
 });
 
 Route::get('/clinicProfile/{clinic_id}',function($clinic_id){

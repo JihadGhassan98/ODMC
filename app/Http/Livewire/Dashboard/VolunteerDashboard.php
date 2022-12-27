@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Dashboard;
 
 use Livewire\Component;
 use App\Models\Citie;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Volunteer;
 
@@ -15,11 +16,17 @@ class VolunteerDashboard extends Component
         return view('livewire.dashboard.volunteer-dashboard',[
           'cities'=>$this->getCities(),
           'currVolunteer'=>Volunteer::where('user_id',Auth::user()->id)->first(),
+          'users'=>$this->getUsers(),
           
 
         ]);
     }
 
+    public function getUsers(){
+
+
+        return User::where('need_volunteer',1)->get();
+    }
     public function getCities(){
 
         return Citie::where('active',1)->get();

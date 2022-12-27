@@ -34,6 +34,7 @@ class User extends Authenticatable
         'birthdate',
         'medical_record_path',
         'active',
+        'need_volunteer',
     ];
 
     /**

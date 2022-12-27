@@ -1,6 +1,6 @@
 <nav class="navbar">
 
-<div class="navbar__logo-lang">
+<div class="navbar__logo-lang" >
     <img src="/systemImages/ODMC.png" alt="" class="navbar__logo-lang--logo">
     @if(App::isLocale('en'))
     <a href="{{url('lang/ar')}}" class="navbar__logo-lang--lang">العربية</a>
@@ -12,10 +12,10 @@
 
 <div class="navbar__links  desktop-links">
     <a href="{{url('/')}}" class="navbar__links--link">{{App::isLocale('ar')? 'الرئيسية':'Home'}}</a>
-    <a href="#" class="navbar__links--link">{{App::isLocale('ar')? 'العيادات':'Clinics'}}</a>
-    <a href="#" class="navbar__links--link">{{App::isLocale('ar')? 'العروض':'Offers'}}</a>
-    <a href="#" class="navbar__links--link">{{App::isLocale('ar')? 'من نحن':'About Us'}}</a>
-    <a href="#" class="navbar__links--link">{{App::isLocale('ar')? 'تواصل معنا':'Contact Us'}}</a>
+    <a href="{{url('/#clinics')}}" class="navbar__links--link">{{App::isLocale('ar')? 'العيادات':'Clinics'}}</a>
+    <a href="{{url('/#offers')}}" class="navbar__links--link">{{App::isLocale('ar')? 'العروض':'Offers'}}</a>
+    {{-- <a href="#" class="navbar__links--link">{{App::isLocale('ar')? 'من نحن':'About Us'}}</a>
+    <a href="#" class="navbar__links--link">{{App::isLocale('ar')? 'تواصل معنا':'Contact Us'}}</a> --}}
 
     @auth 
     <form method="POST" action="{{route('logout')}}" class="navbar__links--link auth-link">@csrf <button class="auth-link">{{App::isLocale('ar')? 'تسجيل الخروج':'Log Out'}}</button></form>
@@ -41,10 +41,10 @@
 <a href="{{route('register')}}" class="mobile-links__link auth-link-2">{{App::isLocale('ar')? 'التسجيل':'Register'}}</a>
 @endauth
 <a href="{{url('/')}}" class="mobile-links__link">{{App::isLocale('ar')? 'الرئيسية':'Home'}}</a>
-    <a href="#" class="mobile-links__link">{{App::isLocale('ar')? 'العيادات':'Clinics'}}</a>
-    <a href="#" class="mobile-links__link">{{App::isLocale('ar')? 'العروض':'Offers'}}</a>
-    <a href="#" class="mobile-links__link">{{App::isLocale('ar')? 'من نحن':'About Us'}}</a>
-    <a href="#" class="mobile-links__link">{{App::isLocale('ar')? 'تواصل معنا':'Contact Us'}}</a>
+    <a href="{{url('/#clinics')}}" class="mobile-links__link">{{App::isLocale('ar')? 'العيادات':'Clinics'}}</a>
+    <a href="{{url('/#offers')}}" class="mobile-links__link">{{App::isLocale('ar')? 'العروض':'Offers'}}</a>
+    {{-- <a href="#" class="mobile-links__link">{{App::isLocale('ar')? 'من نحن':'About Us'}}</a>
+    <a href="#" class="mobile-links__link">{{App::isLocale('ar')? 'تواصل معنا':'Contact Us'}}</a> --}}
  
 
 
