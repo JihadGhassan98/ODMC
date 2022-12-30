@@ -44,6 +44,7 @@ public function refreshDialog(){
      $this->tooMany = 0;
      $this->wrongDay = 0;
      $this->wrongHour = 0;
+     $this->emptyData = 0;
      $this->showDialog = 0;
 }
     public function myClinic(){
@@ -79,6 +80,7 @@ public function refreshDialog(){
     public function hideDialog(){
         $this->showDialog=0;
         $this->serviceID = null;
+        $this->refreshDialog();
     }
     public function Book(){
  
@@ -130,7 +132,7 @@ public function refreshDialog(){
          
           
 
-                if($appointments == $clinic->appt_count){
+                if($appointments >= $clinic->appt_count){
 
                     $this->tooMany=1;
                 }

@@ -329,6 +329,7 @@ $this->s_city_sort=0;;
 public function hideDialog(){
     $this->showDialog=0;
     $this->serviceID = null;
+$this->refreshDialog();
 }
 public function Book(){
  
@@ -339,6 +340,7 @@ public function Book(){
     }
     $date1 = new DateTime($this->date);
 $date2 = new DateTime(date('Y-m-d') );
+
 
 $days = $date2->diff($date1)->format('%r%d');
 
@@ -379,7 +381,7 @@ if($days === "-1"){
                 
               }
 
-            if($appointments == $clinic->appt_count){
+            if($appointments >= $clinic->appt_count){
 
                 $this->tooMany=1;
             }
