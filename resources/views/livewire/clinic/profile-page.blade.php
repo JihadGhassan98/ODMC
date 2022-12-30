@@ -112,6 +112,8 @@
                 <span class='booking-error'>{{App::isLocale('ar')?'لقد قمت باختيار يوم خارج ايام دوام العيادة':'You Have Chosen A Wrong Work Day'}} <button wire:click="refreshDialog()" class="refresh-dialog"><i class="fa fa-refresh" aria-hidden="true"></i></button></span>
                 @elseif($wrongHour)
                 <span class='booking-error'>{{App::isLocale('ar')? 'يرجى اختيار وقت ضمن ساعات دوام العيادة':'Please Consider The Working Hours'}} <button wire:click="refreshDialog()" class="refresh-dialog"><i class="fa fa-refresh" aria-hidden="true"></i></button></span>
+                @elseif($emptyData)
+            <span class='booking-error'>{{App::isLocale('ar')? 'يرجى اختيار وقت ضمن ساعات دوام العيادة':'Please Consider The Working Hours'}} <button wire:click="refreshDialog()" class="refresh-dialog"><i class="fa fa-refresh" aria-hidden="true"></i></button></span>
                 @else
             <button wire:click="Book()"  onclick="scroll_unlock()" class="dialog-btn dialog-confirm">{{App::isLocale('ar')? 'تأكيد':'Confirm'}}</button>
             @endif

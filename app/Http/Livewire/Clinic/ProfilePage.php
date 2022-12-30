@@ -18,6 +18,7 @@ class ProfilePage extends Component
 {
     public $tooMany = 0;
     public $wrongDay = 0;
+    public $emptyData = 0;
     public $wrongHour = 0;
     public $showDialog = 0;
     public $serviceID;
@@ -67,6 +68,11 @@ public function refreshDialog(){
     }
 
     public function showDialog($id){
+        if(!Auth::check()){
+
+            redirect()->to('/register');
+  
+          }
         $this->showDialog=1;
         $this->serviceID = $id;
     }
@@ -80,6 +86,17 @@ public function refreshDialog(){
 
           redirect()->to('/register');
 
+        }
+        if($this->city&& $this->date&&$this->time&&$this->pickupAddress){
+
+               
+
+        }
+        else{
+
+          $this->emptyData =1;
+          return;
+          
         }
         $date1 = new DateTime($this->date);
     $date2 = new DateTime(date('Y-m-d') );

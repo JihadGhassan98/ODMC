@@ -45,7 +45,7 @@ $this->sortID = $id;
             'appointment_statuses.name_ar as status_ar',
             'appointment_statuses.name_en as status_en',
             'appointment_statuses.id as status_id',
-        )->get();
+        )->orderBy('created_at','desc')->get();
         
         
         

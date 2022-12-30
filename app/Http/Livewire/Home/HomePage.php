@@ -18,6 +18,7 @@ class HomePage extends Component
     public $tooMany = 0;
     public $wrongDay = 0;
     public $wrongHour = 0;
+    public $emptyData = 0;
     public $showDialog = 0;
     public $serviceID;
     public $date;
@@ -309,14 +310,22 @@ $this->s_city_sort=0;;
         $this->wrongDay = 0;
         $this->wrongHour = 0;
         $this->showDialog = 0;
+        $this->emptyData = 0;
         $this->serviceID= null;
    }
 
 
    public function showDialog($id){
+    if(!Auth::check()){
+
+        redirect()->to('/register');
+  
+      }
+      else{
     $this->showDialog=1;
     $this->serviceID = $id;
 }
+   }
 public function hideDialog(){
     $this->showDialog=0;
     $this->serviceID = null;
@@ -350,7 +359,7 @@ if($days === "-1"){
     $w_d_e = $clinic->week_end;
     $w_h_s= $clinic->day_start; 
     $w_h_e=$clinic->day_end;
-    
+ 
    $day = date('l', strtotime($this->date));
    
    if(array_search($day,$this->daysOfTheWeek)){
@@ -358,7 +367,17 @@ if($days === "-1"){
     
     if($index >= $w_d_s && $index <= $w_d_e ){
      
- 
+              if($this->city&& $this->date&&$this->time&&$this->pickupAddress){
+
+               
+
+              }
+              else{
+
+                $this->emptyData =1;
+                return;
+                
+              }
 
             if($appointments == $clinic->appt_count){
 
