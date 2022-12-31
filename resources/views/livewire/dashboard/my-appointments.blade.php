@@ -13,7 +13,8 @@
     <span class="appt-data">{{App::isLocale('ar')? $appt->service_ar:$appt->service_en}}</span>
     <span class="appt-data">{{$appt->pickup_address}}</span>
     <span class="appt-data">@if($appt->note) {{$appt->note }} @else ------- @endif</span>
-
+    <span class="appt-data">{{App::isLocale('ar')? $appt->status_ar:$appt->status_en}}</span>
+    <span class="appt-data">@if($appt->doctor_id) {{$this->getDoctorData($appt->doctor_id)->first_name . ' '.$this->getDoctorData($appt->doctor_id)->last_name  }} @else ------- @endif</span>
 
 
 </div>

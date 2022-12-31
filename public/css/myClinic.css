@@ -45,6 +45,22 @@
   border: 2px solid #658A2E;
   position: relative;
 }
+.my-clinic__heading .clinic-box-report-cta {
+  cursor: pointer;
+  width: 15%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  background-color: #662D91;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+}
 .my-clinic__heading .clinic-label {
   background-color: #f8efff;
   text-align: center;

@@ -138,14 +138,25 @@ public function closeAction()
 
 public function deleteUser(){
     $volunteer = Volunteer::where('user_id',Session::get('userID'))->first();
-    if($volunteer != null)
-    $volunteer->delete();
+    if($volunteer != null){
+        $volunteerAppointments = Appointment::
+where('volunteer_id',$volunteer->id)->get();
+foreach($volunteerAppointments as $appt){
 
+$appt->update([
+'volunteer_id'=>null
+]);
+
+
+}
+    $volunteer->delete();
+    }
     
 $user= User::find(Session::get('userID'));
 
 $appointments = Appointment::where('user_id',$user->id)->get();
 $clinics = Clinic::where('user_id',$user->id)->get();
+
 foreach($appointments as $appointment){
     $appointment->delete();
 }

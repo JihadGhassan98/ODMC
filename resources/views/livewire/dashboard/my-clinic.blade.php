@@ -67,6 +67,9 @@
 
                 @endif
                 </div>
+                <div class="clinic-box-report-cta">
+<a href="{{url('clinicReport/'.$clinic->id)}}" class="link-report">{{App::isLocale('ar')? 'عرض التقارير':'Show Clinic Reports'}}</a>
+                </div>
             </div>
         </div>
         <div class="my-clinic__section">
@@ -112,7 +115,50 @@
             </div>
             <button wire:click="showDialog(10)" onclick="scroll_lock()" class="add-service">{{App::isLocale('ar')? 'إضافة':'Add'}}</button>
         </div>
-
+        <div class="my-clinic__section">
+            <h1 class="my-clinic__section--head-text">{{App::isLocale('ar')? 'مواعيد قادمة':'Upcoming Appointments'}}</h1>
+            <div class="my-appointments__appointments">
+                @forelse($appointments as $appt)
+        <div class="my-appointments__appointments--appointment" dir="{{App::isLocale('ar')? 'rtl':'ltr'}}">
+            <span class="appt-data">{{App::isLocale('ar')? $appt->username:$appt->username}}</span>
+            <span class="appt-data">{{App::isLocale('ar')? $appt->useremail:$appt->useremail}}</span>
+            <span class="appt-data">{{App::isLocale('ar')? $appt->userphone:$appt->userphone}}</span>
+            <span class="appt-data">{{App::isLocale('ar')? $appt->city_ar:$appt->city_en}}</span>
+            <span class="appt-data">{{App::isLocale('ar')? $appt->city_ar:$appt->city_en}}</span>
+            <span class="appt-data">{{App::isLocale('ar')? $appt->clinic_ar:$appt->clinic_en}}</span>
+            <span class="appt-data">{{$appt->date}}</span>
+            <span class="appt-data">{{$appt->time}}</span>
+            <span class="appt-data">{{App::isLocale('ar')? $appt->service_ar:$appt->service_en}}</span>
+            <span class="appt-data">{{$appt->pickup_address}}</span>
+            <span class="appt-data">{{App::isLocale('ar')? $appt->status_ar:$appt->status_en}}</span>
+            <span class="appt-data">@if($appt->note) {{$appt->note }} @else ------- @endif</span>
+            <span class="appt-data">@if($appt->doctor_id) {{$this->getDoctorData($appt->doctor_id)->first_name . ' '.$this->getDoctorData($appt->doctor_id)->last_name  }} @else ------- @endif</span>
+            <span class="appt-data">@if($appt->volunteer_id) {{$this->getVolunteerData($appt->volunteer_id)->name . ' '.$this->getVolunteerData($appt->volunteer_id)->phone  }} @else ------- @endif</span>
+            <span class="appt-data">
+                <select wire:model="doctor_id" wire:change="assignDoctor({{$appt->id}})" >
+                <option value="">{{App::isLocale('ar')? '--اختر طبيبآ--':'--Choose A Doctor--'}}</option>
+               @foreach($doctors as $doc)
+                <option value="{{$doc->id}}">{{$doc->first_name .' '.$doc->last_name}}</option>
+                @endforeach    
+            </select>
+            </span>
+            <span class="appt-data">
+                <select wire:model="status_id" wire:change="changeAptStatus({{$appt->id}})" >
+                <option value="">{{App::isLocale('ar')? '--اختر حالة--':'--Choose A Status--'}}</option>
+               @foreach($status as $doc)
+                <option value="{{$doc->id}}">{{App::isLocale('ar')? $doc->name_ar : $doc->name_en  }}</option>
+                @endforeach    
+            </select>
+            </span>
+        
+        
+        </div>
+        @empty
+        <h1 class="no-appt">{{App::isLocale('ar')? 'لا نتائج':'No Results'}}</h1>
+        @endforelse
+        
+            </div>
+        </div>
     </main>
 
 

@@ -6,6 +6,8 @@ use App\Models\Appointment;
 use Livewire\Component;
 use App\Models\Clinic;
 use App\Models\Appointment_statuse;
+use App\Models\Doctor;
+use App\Models\Volunteer;
 use Livewire\WithPagination;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,11 +42,29 @@ return Appointment::join('cities', 'appointments.city_id', 'cities.id')
     'appointment_statuses.name_ar as status_ar',
     'appointment_statuses.name_en as status_en',
     'appointment_statuses.id as status_id',
-)->get();
+
+)
+->orderBy('created_at','desc')
+->get();
+
+    }
 
 
 
+    public function getDoctorData($id){
+
+        return Doctor::where('id',$id)->first();
 
 
     }
+
+    public function getVolunteerData($id){
+
+        return Volunteer::find($id);
+
+
+    }
+
+
+
 }

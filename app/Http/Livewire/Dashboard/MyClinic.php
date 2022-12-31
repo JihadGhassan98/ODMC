@@ -9,6 +9,7 @@ use App\Models\Service;
 use App\Models\Clinic;
 use App\Models\Doctor;
 use App\Models\Appointment;
+use App\Models\Appointment_statuse;
 use App\Models\Blog;
 use App\Models\Categorie;
 use App\Models\Citie;
@@ -38,6 +39,8 @@ class MyClinic extends Component
  public $s_en;
  public $price;
  public $discount;
+ public $doctor_id;
+ public $status_id;
     public $showDialog ;
     public $editCase;
     public function render()
@@ -49,10 +52,72 @@ class MyClinic extends Component
         'blogs'=>$this->getBlogs(),
         'cities'=>$this->cities(),
         'categs'=>$this->categs(),
+        'appointments'=>$this->getPendingAppointments(),
+        'status'=>$this->getStatus(),
 
 
 
         ]);
+    }
+    public function getStatus(){
+
+        return Appointment_statuse::all();
+    }
+    public function getPendingAppointments(){
+
+        $myClinic =  Clinic::where('user_id',Auth::user()->id)->first();
+
+        return Appointment::join('cities', 'appointments.city_id', 'cities.id')
+        ->join('clinics', 'appointments.clinic_id', 'clinics.id')
+        ->join('services', 'appointments.service_id', 'services.id')
+        ->join('users', 'appointments.user_id', 'users.id')
+        ->join('appointment_statuses', 'appointments.status_id', 'appointment_statuses.id')
+        ->where('appointments.clinic_id',$myClinic->id)
+        ->where('appointments.status_id',3)
+        ->select(
+            'cities.name_ar as city_ar',
+            'cities.name_en as city_en',
+            'clinics.name_ar as clinic_ar',
+            'clinics.name_en as clinic_en',
+            'appointments.*',
+            'users.name as username',
+            'users.phone as userphone',
+            'users.email as useremail',
+            'services.id as service_ID',
+            'services.name_ar as service_ar',
+            'services.name_en as service_en',
+            'appointment_statuses.name_ar as status_ar',
+            'appointment_statuses.name_en as status_en',
+            'appointment_statuses.id as status_id',
+        )->orderBy('created_at','desc')->get();
+        
+
+    }
+    public function assignDoctor($apt_id){
+
+        $apt = Appointment::find($apt_id);
+
+        $apt->update([
+
+     'doctor_id'=>$this->doctor_id,
+
+        ]);
+        $apt->save();
+        $this->doctor_id=null;
+
+    }
+    public function changeAptStatus($apt_id){
+        $apt = Appointment::find($apt_id);
+
+        $apt->update([
+
+     'status_id'=>$this->status_id,
+
+        ]);
+        $apt->save();
+        $this->status_id=null;
+
+
     }
     public function categs(){
 
@@ -62,6 +127,12 @@ class MyClinic extends Component
     public function cities(){
 
         return Citie::all();
+    }
+    public function getDoctorData($id){
+
+        return Doctor::where('id',$id)->first();
+
+
     }
 public function getClinic(){
 
