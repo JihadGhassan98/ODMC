@@ -13,6 +13,7 @@ use App\Models\Appointment_statuse;
 use App\Models\Blog;
 use App\Models\Categorie;
 use App\Models\Citie;
+use App\Models\Volunteer;
 use DateTime;
 use Ramsey\Uuid\Type\Time;
 use Session;
@@ -115,6 +116,19 @@ class MyClinic extends Component
 
         ]);
         $apt->save();
+
+        if($apt->volunteer_id != null && ($this->status_id == 1)){
+         $v= Volunteer::find($apt->volunteer_id);
+
+         $v->update([
+          'points'=> $v->points+=100,
+
+
+         ]);
+
+
+        }
+
         $this->status_id=null;
 
 
@@ -127,6 +141,12 @@ class MyClinic extends Component
     public function cities(){
 
         return Citie::all();
+    }
+    public function getVolunteerData($id){
+
+        return Volunteer::join('users','volunteers.user_id','users.id')->first();
+
+
     }
     public function getDoctorData($id){
 
