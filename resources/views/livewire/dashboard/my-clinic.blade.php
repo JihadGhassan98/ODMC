@@ -150,7 +150,50 @@
                 @endforeach    
             </select>
             </span>
-        
+            <span class="user-medical-status">{{App::isLocale('ar')? 'معلومات المريض الطبية':'Patient Medical Information'}}</span>
+            <span class="appt-data">
+                <span class="appt-data-label">{{App::isLocale('ar')? 'الحساسيات':'Allergies'}}</span>
+                @forelse($this->getAllergies($appt->user_id) as $item)
+                <span>{{App::isLocale('ar')? $item->name_ar:$item->name_en}}</span>
+                @empty
+                ----------
+                @endforelse
+            </span>
+            <span class="appt-data">
+                <span class="appt-data-label">{{App::isLocale('ar')? 'الإعاقات':'Disabilities'}}</span>
+                @forelse($this->getDisabs($appt->user_id) as $item)
+                <span>{{ $item->name}}</span>
+                @empty
+                ----------
+                @endforelse
+            </span>
+            <span class="appt-data">
+                <span class="appt-data-label">{{App::isLocale('ar')? 'الأدوية':'Drugs'}}</span>
+                @forelse( $this->getDrugs($appt->user_id) as $item)
+                <span>{{ $item->name}}</span>
+
+
+                @empty
+                ----------
+                @endforelse
+            </span>
+            <span class="appt-data">
+                <span class="appt-data-label">{{App::isLocale('ar')? 'الأمراض المزمنة':'Choronic Diseases'}}</span>
+                @forelse($this->getCD($appt->user_id) as $item)
+                <span>{{ $item->name}}</span>
+                
+
+                @empty
+                ----------
+                @endforelse
+            </span>
+            <span class="appt-data-file">
+                @if($appt->user_MR)
+                <a href="/medicalReports/{{$appt->user_MR}}" download class="file-link">{{App::isLocale('ar')? 'عرض الملف الطبي':'Show Medical Record'}}</a>
+                @else
+                <button disabled class="file-link">{{App::isLocale('ar')? 'لا يوجد سجل طبي':'No Record To View'}}</button>
+                @endif
+            </span>
         
         </div>
         @empty

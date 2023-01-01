@@ -57,6 +57,11 @@ Route::middleware([
 return view('findVolunteer');
 
     });
+    Route::get('pointsList',function (){
+
+
+        return view();
+    });
 
     Route::get('allVolunteers', function () {
 

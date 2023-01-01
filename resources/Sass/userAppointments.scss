@@ -51,11 +51,45 @@ gap: 10px;
     background-color: #fff;
     text-align: center;
     font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     select {
 
 
         width: 100%;
     }
+
+    .appt-data-label{
+
+        width: 100%;
+        background-color: #000;
+        color: #fff;
+        border-bottom: 2px solid #fff;
+    }
+ 
+}
+.appt-data-file{
+    margin: 20px auto;
+.file-link{
+
+    padding: 10px;
+    background-color: #fff;
+    color: #662D91;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+
+}
+}
+.user-medical-status{
+
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+
 }
 }
 }

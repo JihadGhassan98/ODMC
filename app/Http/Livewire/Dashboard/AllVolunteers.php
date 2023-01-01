@@ -124,4 +124,19 @@ public function deleteVolunteer($UID,$VID){
     $user->save();
 }
 
+
+public function resetPoints($id){
+
+$v = Volunteer::find($id);
+
+$v->update([
+
+
+    'points'=> 0 
+]);
+
+$v->save();
+
+}
+
 }

@@ -56,7 +56,7 @@
     <span class="request_data"><b>{{App::isLocale('ar')? 'الهاتف':'Phone'}}: </b> {{$VReq->phone}}</span>
     <span class="request_data"><b>{{App::isLocale('ar')? 'البريد الإلكتروني':'Email'}}: </b> {{$VReq->email}}</span>
     <span class="request_data"><b>{{App::isLocale('ar')? 'المدينة':'City'}}: </b> {{App::isLocale('ar')? $VReq->city_ar:$VReq->city_en}}</span>
-    <span class="request_data"><b>{{App::isLocale('ar')? 'النقاط':'Points'}}: </b> {{number_format($VReq->points,2)}}</span>
+    <span class="request_data"><b>{{App::isLocale('ar')? 'النقاط':'Points'}}: </b> {{number_format($VReq->points,2)}} <button wire:click="resetPoints({{$VReq->volID}})" class="clear-points"><i class="fa fa-refresh" aria-hidden="true"></i></button></span>
     @if($VReq->certificate_path)
     <span class="request_data cv-link"><a href="{{url('/medicalReports/'.$VReq->certificate_path)}}" download class="request_file">{{App::isLocale('ar')? 'تحميل السيرة الذاتية':'Download Resume'}}</a></span>
     @else

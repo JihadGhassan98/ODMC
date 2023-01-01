@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Dashboard;
 
+use App\Models\Allergie;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -12,7 +13,10 @@ use App\Models\Appointment;
 use App\Models\Appointment_statuse;
 use App\Models\Blog;
 use App\Models\Categorie;
+use App\Models\Choronic_disease;
 use App\Models\Citie;
+use App\Models\Disabilitie;
+use App\Models\Drug;
 use App\Models\Volunteer;
 use DateTime;
 use Ramsey\Uuid\Type\Time;
@@ -82,6 +86,8 @@ class MyClinic extends Component
             'clinics.name_en as clinic_en',
             'appointments.*',
             'users.name as username',
+            'users.id as user_id',
+            'users.medical_record_path as user_MR',
             'users.phone as userphone',
             'users.email as useremail',
             'services.id as service_ID',
@@ -119,7 +125,7 @@ class MyClinic extends Component
 
         if($apt->volunteer_id != null && ($this->status_id == 1)){
          $v= Volunteer::find($apt->volunteer_id);
-
+      
          $v->update([
           'points'=> $v->points+=100,
 
@@ -143,20 +149,12 @@ class MyClinic extends Component
         return Citie::all();
     }
     public function getVolunteerData($id){
-
         return Volunteer::join('users','volunteers.user_id','users.id')->first();
-
-
     }
     public function getDoctorData($id){
-
         return Doctor::where('id',$id)->first();
-
-
     }
 public function getClinic(){
-
-
     return Clinic::join('cities', 'clinics.city_id', 'cities.id')
     ->join('users', 'clinics.user_id', 'users.id')
     ->join('categories', 'clinics.category_id', 'categories.id')
@@ -173,6 +171,23 @@ public function getClinic(){
         'categories.name_ar as categ_ar',
         'categories.name_en as categ_en',
     ])->first();
+}
+
+public function getCD($id){
+
+   return Choronic_disease::where('user_id',$id)->get();
+}
+public function getDrugs($id){
+
+    return Drug::where('user_id',$id)->get();
+}
+public function getAllergies($id){
+
+    return Allergie::where('user_id',$id)->get();
+}
+public function getDisabs($id){
+
+    return Disabilitie::where('user_id',$id)->get();
 }
     public function getServices(){
 
