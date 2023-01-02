@@ -76,7 +76,7 @@ $this->getCurrVolunteer();
     public function getCurrVolunteer(){
 
         $vol = Volunteer::where('user_id',Auth::user()->id)->first();
-  $this->currVolID = $vol->user_id;
+  $this->currVolID = $vol->id;
 
     }
     public function addToList($id){
