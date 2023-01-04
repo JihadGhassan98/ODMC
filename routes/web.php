@@ -103,3 +103,10 @@ Route::get('/clinicProfile/{clinic_id}',function($clinic_id){
 Session::put('CID',$clinic_id);
     return view('website.clinicProfile');
 });
+
+
+Route::get('/about',function (){
+
+
+    return view('website.aboutUs');
+});

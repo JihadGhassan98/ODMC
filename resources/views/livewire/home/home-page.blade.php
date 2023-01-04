@@ -5,7 +5,7 @@
         </div>
         <div class="home-page__hero--slug">
             <span class="slug-text">{{App::isLocale('ar')?'مكان رائع للعمل و أروع لتلقي العناية':'A Great Place to Work. A Great Place to Receive Care.'}}</span>
-            <a href="#" class="slug-cta">{{App::isLocale('ar')? 'المزيد من المعلومات':'Learn More'}}</a>
+            <a href="{{url('/about')}}" class="slug-cta">{{App::isLocale('ar')? 'المزيد من المعلومات':'Learn More'}}</a>
         </div>
     </header>
 
@@ -65,8 +65,16 @@
    @forelse($offers as $clinic)
    <div class="clinic-item">
     <img  class="c-img"src="/userImages/{{$clinic->logo}}" alt="">
+   <span class="c-data"> {{App::isLocale('ar')? $clinic->clinic_ar:$clinic->clinic_en}}</span>
    <span class="c-data"> {{App::isLocale('ar')? $clinic->name_ar:$clinic->name_en}}</span>
    <span class="c-data"> {{App::isLocale('ar')? $clinic->city_ar:$clinic->city_en}}</span>
+   @if(App::isLocale('en'))
+   <span class="c-dates"> {{ $daysOfTheWeek[$clinic->clinic_wstart] . '-' . $daysOfTheWeek[$clinic->clinic_wend]}} </span>
+   @else
+   <span class="c-dates"> {{ $daysOfTheWeek_ar[$clinic->clinic_wstart] . '-' . $daysOfTheWeek_ar[$clinic->clinic_wend]}} </span>
+
+   @endif
+   <span class="c-dates"> {{ $clinic->clinic_start . '-' .$clinic->clinic_end}} </span>
    <span class="c-dates"> {{App::isLocale('ar')? $clinic->categ_ar:$clinic->categ_en}} </span>
    @if($clinic->discount == 0)
    <span class="c-dates normal-price"> {{$clinic->price}} {{App::isLocale('ar')? 'د.أ':'JOD'}} </span>
@@ -90,7 +98,7 @@
  
     <div class="universal-popup__dialog-box">
         <div class="universal-popup__dialog-box--dialog-header">
-        <span class="dialog-name">{{App::isLocale('ar')? 'تعديل معلومات العيادة':'Editing Clinic Information'}}</span>
+        <span class="dialog-name">{{App::isLocale('ar')? 'حجز موعد':'Make An Appointment'}}</span>
         <button onclick="scroll_unlock()" wire:click = "hideDialog()" class="dialog-close"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div dir="{{App::isLocale('ar')? 'rtl':'ltr'}}" class="universal-popup__dialog-box--dialog-body">

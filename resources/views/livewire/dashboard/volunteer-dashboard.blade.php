@@ -31,6 +31,7 @@
     <span class="db-body__saperator">{{App::isLocale('ar')? 'طلبات التطوع':'Volunteer Requests'}}</span>
     <div class="v-dashboard__user-appts">
         @forelse($users as $user)
+        @if(count($this->getAppts($user->id)))
         <div class="v-dashboard__user-appts--user-data">
             <span class="username">{{$user->name}}</span>
             @if(App::isLocale('ar'))
@@ -57,10 +58,12 @@
         @empty
         <span class="no-apts">{{App::isLocale('ar')? 'لا يوجد مواعيد':'No Appointments'}}</span>
         @endforelse
-    @empty
+   @endif
+        @empty
     <span class="no-users-found">{{App::isLocale('ar')? 'لا يوجد طلبات':'No Requests'}}</span>
-    
+  
     @endforelse
+
     </div>
 </div>
 

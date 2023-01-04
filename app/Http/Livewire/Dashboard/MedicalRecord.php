@@ -40,7 +40,7 @@ class MedicalRecord extends Component
 
     public function AddAllergy(){
 
-        if($this->allergyName_en == null && $this->allergyName_en == null){
+        if($this->allergyName_ar == null){
 
 return ;
         };
@@ -49,7 +49,7 @@ return ;
         Allergie::create([
         'user_id'=>Auth::user()->id,
         'name_ar'=>$this->allergyName_ar,
-        'name_en'=>$this->allergyName_en,
+        'name_en'=>'dummy_en',
         ]);
 
         $this->allergyName_ar=null;
